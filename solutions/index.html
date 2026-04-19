@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solutions — Websites Built for Your Industry | Sitezy</title>
+<meta name="description" content="Sitezy builds custom websites for local service businesses, restaurants, professional services, e-commerce, startups, and creators. 48-hour preview. From $39/month.">
+<link rel="canonical" href="https://sitezy.co/solutions/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F71FF'/%3E%3Cpath d='M19.5 4.5L11 15.5h6.5L14.5 27.5l10-13H18l1.5-10z' fill='white' opacity='.95'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+<link rel="stylesheet" href="/css/global.css">
+
+<style>
+/* ─── PAGE-SPECIFIC: Solutions Hub ─── */
+
+/* ── HERO ── */
+.sol-hero {
+  background:var(--navy);
+  padding:72px 20px 80px;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+}
+@media(min-width:768px){ .sol-hero{ padding:88px 56px 96px; } }
+.sol-hero::before {
+  content:''; position:absolute;
+  top:-200px; left:50%; transform:translateX(-50%);
+  width:min(900px,130vw); height:560px; border-radius:50%;
+  background:radial-gradient(ellipse,rgba(79,113,255,.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.sol-hero::after {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background-image:linear-gradient(rgba(79,113,255,.04) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(79,113,255,.04) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 70% 50% at 50% 50%,black 0%,transparent 70%);
+}
+.sol-hero h1 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(36px,6vw,68px);
+  font-weight:800; line-height:1.06; letter-spacing:-2px;
+  color:var(--white); position:relative; z-index:1;
+  animation:fadeUp .7s .1s ease both;
+}
+.sol-hero h1 .accent{ color:var(--blue3); }
+.sol-hero-sub {
+  font-size:clamp(17px,2vw,20px); color:var(--text2);
+  font-weight:300; line-height:1.8; max-width:600px;
+  margin:20px auto 0; position:relative; z-index:1;
+  animation:fadeUp .7s .18s ease both;
+}
+.sol-hero-note {
+  font-size:13px; color:var(--text3); margin-top:10px;
+  position:relative; z-index:1;
+  animation:fadeUp .7s .3s ease both;
+}
+.sol-hero-ctas {
+  display:flex; flex-wrap:wrap; gap:12px;
+  justify-content:center; margin-top:32px;
+  position:relative; z-index:1;
+  animation:fadeUp .7s .24s ease both;
+}
+
+/* ── INDUSTRY PILLS (quick jump) ── */
+.ind-pills {
+  display:flex; flex-wrap:wrap; justify-content:center;
+  gap:8px; margin-top:28px;
+  position:relative; z-index:1;
+  animation:fadeUp .7s .3s ease both;
+}
+.ind-pill {
+  display:inline-flex; align-items:center; gap:7px;
+  padding:8px 16px; border-radius:100px;
+  background:var(--card); border:1px solid var(--border);
+  font-size:13px; font-weight:600; color:var(--text2);
+  cursor:pointer; transition:all .22s; text-decoration:none;
+}
+.ind-pill:hover{ color:var(--white); border-color:var(--border2); background:var(--card2); }
+.ind-pill-dot{ width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+/* ── SOLUTION CARDS GRID ── */
+.solutions-section { background:var(--navy2); padding:80px 20px; }
+@media(min-width:768px){ .solutions-section{ padding:96px 56px; } }
+
+.sol-grid {
+  display:grid; grid-template-columns:1fr;
+  gap:20px; margin-top:56px;
+}
+@media(min-width:640px){ .sol-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:900px){ .sol-grid{ grid-template-columns:repeat(3,1fr); gap:24px; } }
+
+.sol-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r-xl); overflow:hidden;
+  transition:all .32s cubic-bezier(.4,0,.2,1);
+  display:flex; flex-direction:column;
+  text-decoration:none; position:relative;
+}
+.sol-card:hover{ transform:translateY(-6px); box-shadow:var(--sh-lg); }
+
+/* Top colour band */
+.sol-card-band {
+  height:6px; width:100%; flex-shrink:0;
+  transition:height .3s;
+}
+.sol-card:hover .sol-card-band{ height:8px; }
+
+.sol-card-body { padding:28px 26px; flex:1; display:flex; flex-direction:column; }
+@media(min-width:768px){ .sol-card-body{ padding:32px 30px; } }
+
+.sol-card-icon {
+  width:52px; height:52px; border-radius:15px;
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:20px; transition:transform .3s;
+}
+.sol-card:hover .sol-card-icon{ transform:scale(1.08); }
+
+.sol-card-title {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:20px; font-weight:800; color:var(--white);
+  letter-spacing:-.3px; margin-bottom:10px; line-height:1.2;
+}
+.sol-card-desc {
+  font-size:15.5px; color:var(--text2);
+  line-height:1.75; font-weight:300; flex:1;
+}
+.sol-card-types {
+  font-size:13px; color:var(--text3);
+  margin-top:14px; line-height:1.65;
+}
+
+.sol-card-footer {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-top:24px; padding-top:20px; border-top:1px solid var(--border);
+}
+.sol-card-result {
+  display:flex; align-items:center; gap:6px;
+  font-size:13px; font-weight:600;
+}
+.sol-card-result svg{ flex-shrink:0; }
+.sol-card-link {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:13px; font-weight:700; color:var(--white);
+  opacity:.5; transition:all .2s; white-space:nowrap;
+}
+.sol-card:hover .sol-card-link{ opacity:1; gap:9px; }
+
+/* Card colour themes */
+.sc-hs .sol-card-band{ background:var(--hs); }
+.sc-hs .sol-card-icon{ background:rgba(6,182,212,.12); border:1px solid rgba(6,182,212,.2); }
+.sc-hs .sol-card-icon svg{ stroke:var(--hs); }
+.sc-hs .sol-card-result{ color:var(--hs); }
+.sc-hs:hover{ border-color:rgba(6,182,212,.3); }
+
+.sc-re .sol-card-band{ background:var(--re); }
+.sc-re .sol-card-icon{ background:rgba(217,119,6,.12); border:1px solid rgba(217,119,6,.2); }
+.sc-re .sol-card-icon svg{ stroke:var(--re); }
+.sc-re .sol-card-result{ color:var(--re); }
+.sc-re:hover{ border-color:rgba(217,119,6,.3); }
+
+.sc-blue .sol-card-band{ background:var(--blue); }
+.sc-blue .sol-card-icon{ background:var(--blue-soft); border:1px solid var(--border2); }
+.sc-blue .sol-card-icon svg{ stroke:var(--blue3); }
+.sc-blue .sol-card-result{ color:var(--blue3); }
+.sc-blue:hover{ border-color:var(--border2); }
+
+.sc-ec .sol-card-band{ background:var(--ec); }
+.sc-ec .sol-card-icon{ background:rgba(244,114,182,.12); border:1px solid rgba(244,114,182,.2); }
+.sc-ec .sol-card-icon svg{ stroke:var(--ec); }
+.sc-ec .sol-card-result{ color:var(--ec); }
+.sc-ec:hover{ border-color:rgba(244,114,182,.3); }
+
+.sc-lt .sol-card-band{ background:var(--lt); }
+.sc-lt .sol-card-icon{ background:rgba(167,139,250,.12); border:1px solid rgba(167,139,250,.2); }
+.sc-lt .sol-card-icon svg{ stroke:var(--lt); }
+.sc-lt .sol-card-result{ color:var(--lt); }
+.sc-lt:hover{ border-color:rgba(167,139,250,.3); }
+
+.sc-ind .sol-card-band{ background:var(--ind); }
+.sc-ind .sol-card-icon{ background:rgba(251,146,60,.12); border:1px solid rgba(251,146,60,.2); }
+.sc-ind .sol-card-icon svg{ stroke:var(--ind); }
+.sc-ind .sol-card-result{ color:var(--ind); }
+.sc-ind:hover{ border-color:rgba(251,146,60,.3); }
+
+/* ── WHY INDUSTRY-SPECIFIC MATTERS ── */
+.why-section{ background:var(--navy); padding:80px 20px; }
+@media(min-width:768px){ .why-section{ padding:96px 56px; } }
+.why-grid{
+  display:grid; grid-template-columns:1fr;
+  gap:16px; margin-top:48px;
+}
+@media(min-width:640px){ .why-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:900px){ .why-grid{ grid-template-columns:repeat(3,1fr); } }
+
+.why-card{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r-lg); padding:28px 24px; transition:all .3s;
+}
+.why-card:hover{ border-color:var(--border2); transform:translateY(-3px); box-shadow:var(--sh-md); }
+.why-ic{
+  width:46px; height:46px; border-radius:13px;
+  background:var(--blue-soft); border:1px solid var(--border2);
+  display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+}
+.why-ic svg{ stroke:var(--blue3); }
+.why-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:17px; font-weight:700; color:var(--white); margin-bottom:8px;
+}
+.why-desc{ font-size:15px; color:var(--text2); line-height:1.75; }
+
+/* ── PROCESS STRIP ── */
+.process-strip{
+  background:var(--navy2);
+  padding:64px 20px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+@media(min-width:768px){ .process-strip{ padding:72px 56px; } }
+.process-steps{
+  display:grid; grid-template-columns:1fr;
+  gap:32px; margin-top:48px; position:relative;
+}
+@media(min-width:768px){ .process-steps{ grid-template-columns:repeat(3,1fr); gap:0; } }
+.process-step{ display:flex; align-items:flex-start; gap:18px; position:relative; z-index:1; }
+@media(min-width:768px){ .process-step{ flex-direction:column; align-items:center; text-align:center; padding:0 24px; } }
+.process-step:not(:last-child)::after{
+  content:''; display:none;
+}
+@media(min-width:768px){
+  .process-step:not(:last-child)::after{
+    display:block; position:absolute;
+    top:28px; left:calc(50% + 36px); right:calc(-50% + 36px);
+    height:1px; background:linear-gradient(90deg,var(--blue),var(--blue3));
+    opacity:.25;
+  }
+}
+.process-num{
+  width:56px; height:56px; border-radius:50%; flex-shrink:0;
+  background:var(--navy); border:1.5px solid var(--border2);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:20px; font-weight:800; color:var(--blue3);
+  box-shadow:0 0 0 6px rgba(79,113,255,.06);
+}
+.process-content{}
+.process-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:18px; font-weight:700; color:var(--white); margin-bottom:8px;
+}
+.process-desc{ font-size:15px; color:var(--text2); line-height:1.75; }
+.process-tag{
+  display:inline-block; margin-top:12px; padding:5px 14px;
+  border-radius:100px; background:var(--blue-soft);
+  color:var(--blue3); font-size:12px; font-weight:600;
+  border:1px solid var(--border2);
+}
+
+/* ── STATS BAND ── */
+.stats-band{
+  background:var(--navy3);
+  padding:48px 20px;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+@media(min-width:768px){ .stats-band{ padding:56px; } }
+.stats-band-inner{
+  max-width:1100px; margin:0 auto;
+  display:grid; grid-template-columns:repeat(2,1fr); gap:2px;
+}
+@media(min-width:540px){ .stats-band-inner{ grid-template-columns:repeat(4,1fr); } }
+.sstat{
+  padding:28px 16px; text-align:center;
+  background:var(--card); transition:background .3s;
+}
+@media(min-width:768px){ .sstat{ padding:36px 24px; } }
+.sstat:hover{ background:var(--blue-soft); }
+.sstat-n{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(32px,4vw,44px); font-weight:800;
+  color:var(--white); line-height:1; letter-spacing:-2px;
+}
+.sstat-n em{ color:var(--blue3); font-style:normal; }
+.sstat-l{
+  font-size:12px; color:var(--text3);
+  margin-top:8px; letter-spacing:.08em;
+  text-transform:uppercase; font-weight:600;
+}
+
+/* ── NOT SURE SECTION ── */
+.notsure{ background:var(--navy); padding:80px 20px; }
+@media(min-width:768px){ .notsure{ padding:96px 56px; } }
+.notsure-inner{
+  max-width:900px; margin:0 auto;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r-2xl); padding:40px 28px;
+  display:flex; flex-direction:column; gap:28px; align-items:flex-start;
+}
+@media(min-width:768px){ .notsure-inner{ flex-direction:row; align-items:center; padding:48px 48px; gap:40px; } }
+.notsure-text{ flex:1; }
+.notsure-text h3{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(22px,3vw,30px); font-weight:800;
+  color:var(--white); letter-spacing:-.5px; margin-bottom:10px; line-height:1.2;
+}
+.notsure-text p{ font-size:17px; color:var(--text2); line-height:1.75; }
+.notsure-actions{ display:flex; flex-direction:column; gap:10px; flex-shrink:0; }
+
+/* ── FINAL CTA ── */
+.sol-final-cta{
+  margin:0 16px 72px;
+  border-radius:var(--r-2xl);
+  background:linear-gradient(135deg,var(--navy3) 0%,#1A2050 50%,var(--navy4) 100%);
+  border:1px solid rgba(79,113,255,.22);
+  padding:48px 28px;
+  display:flex; flex-direction:column;
+  align-items:flex-start; gap:28px;
+  position:relative; overflow:hidden;
+}
+@media(min-width:768px){
+  .sol-final-cta{
+    margin:0 56px 80px; padding:80px;
+    flex-direction:row; align-items:center; justify-content:space-between;
+  }
+}
+.sol-final-cta::before{
+  content:''; position:absolute;
+  top:-100px; right:-100px; width:500px; height:500px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(79,113,255,.18) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-hed{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(26px,3.5vw,46px); font-weight:800;
+  color:var(--white); letter-spacing:-1.5px; line-height:1.1; margin-bottom:10px;
+}
+.cta-sub-t{ font-size:17px; color:var(--text2); font-weight:300; }
+.cta-actions{
+  position:relative; z-index:1;
+  display:flex; flex-direction:column; gap:12px;
+  align-items:flex-start; flex-shrink:0;
+}
+@media(min-width:768px){ .cta-actions{ align-items:flex-end; } }
+.cta-btns{ display:flex; gap:12px; flex-wrap:wrap; }
+.cta-note{ font-size:13px; color:var(--text3); }
+</style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- ══ HERO ══ -->
+<div class="sol-hero">
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Solutions</span>
+  </div>
+  <div class="sec-label center" style="justify-content:center;margin-top:18px">Built for Your Industry</div>
+  <h1>Websites that work as hard<br>as <span class="accent">your business does</span></h1>
+  <p class="sol-hero-sub">Every industry has different customers, different buying signals, and different reasons people hire or don't hire you. We build for all of it — not a generic template, a site that fits your world.</p>
+  <div class="sol-hero-ctas">
+    <a href="/#contact" class="btn btn-blue btn-lg">Get My Free Preview →</a>
+    <a href="/#pricing" class="btn btn-outline btn-lg">See Pricing</a>
+  </div>
+  <p class="sol-hero-note">✓ Free preview &nbsp;·&nbsp; ✓ No credit card &nbsp;·&nbsp; ✓ Live in 7 days</p>
+  <!-- Quick jump pills -->
+  <div class="ind-pills">
+    <a href="/solutions/local-businesses.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--hs)"></span>Local Services</a>
+    <a href="/solutions/restaurants-retail.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--re)"></span>Restaurants</a>
+    <a href="/solutions/professional-services.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--blue3)"></span>Professional Services</a>
+    <a href="/solutions/ecommerce.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--ec)"></span>E-Commerce</a>
+    <a href="/solutions/startups-saas.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--lt)"></span>Startups &amp; SaaS</a>
+    <a href="/solutions/creators-freelancers.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--ind)"></span>Creators</a>
+  </div>
+</div>
+
+<!-- ══ STATS BAND ══ -->
+<div class="stats-band">
+  <div class="stats-band-inner">
+    <div class="sstat"><div class="sstat-n">6</div><div class="sstat-l">Industries Covered</div></div>
+    <div class="sstat"><div class="sstat-n">48<em>h</em></div><div class="sstat-l">Preview Turnaround</div></div>
+    <div class="sstat"><div class="sstat-n">4.9<em>★</em></div><div class="sstat-l">Average Rating</div></div>
+    <div class="sstat"><div class="sstat-n">$0</div><div class="sstat-l">Setup Fee, Ever</div></div>
+  </div>
+</div>
+
+<!-- ══ SOLUTION CARDS ══ -->
+<section class="solutions-section">
+  <div class="container">
+    <div class="sec-label center" style="justify-content:center">Choose Your Industry</div>
+    <h2 class="sec-title center">Find your solution.<br><span class="accent">Pick your industry below.</span></h2>
+    <p class="sec-sub center">Every solution page tells you exactly what we build, why it works for your type of business, and what our clients in that space have said.</p>
+
+    <div class="sol-grid reveal">
+
+      <!-- Local Service Businesses -->
+      <a href="/solutions/local-businesses.html" class="sol-card sc-hs">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">Local Service Businesses</div>
+          <p class="sol-card-desc">Websites built to make your phone ring. Click-to-call, quote forms, local SEO pages, and Google Review integration — everything a tradesperson needs to win jobs online.</p>
+          <div class="sol-card-types">Plumbers · HVAC · Electricians · Roofers · Landscapers · Cleaners · Contractors</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:var(--hs)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More inbound calls
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Restaurants & Food -->
+      <a href="/solutions/restaurants-retail.html" class="sol-card sc-re">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+              <path d="M7 2v20"/>
+              <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">Restaurants &amp; Food Businesses</div>
+          <p class="sol-card-desc">Menus that load fast, reservation flows that convert, and a site that looks as good as your food tastes. Built for the hospitality industry from the ground up.</p>
+          <div class="sol-card-types">Restaurants · Cafés · Bars · Bakeries · Takeaways · Catering · Food Trucks</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:var(--re)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More bookings &amp; orders
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Professional Services -->
+      <a href="/solutions/professional-services.html" class="sol-card sc-blue">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">Professional Services</div>
+          <p class="sol-card-desc">Credibility-first design for service professionals where trust drives every decision. Showcase expertise, qualifications, and client results in a way that converts enquiries into retained clients.</p>
+          <div class="sol-card-types">Lawyers · Accountants · Consultants · Coaches · Financial Advisors · Agencies</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:var(--blue3)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More qualified enquiries
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- E-Commerce -->
+      <a href="/solutions/ecommerce.html" class="sol-card sc-ec">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">E-Commerce &amp; Retail</div>
+          <p class="sol-card-desc">Product architecture built for conversion. Clear category structure, frictionless checkout, SEO-optimised listings, and Shopify or Stripe integration — for brands that sell online.</p>
+          <div class="sol-card-types">DTC Brands · Online Stores · Boutiques · Artisans · Subscription Boxes · Niche Products</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:var(--ec)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More online sales
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Startups & SaaS -->
+      <a href="/solutions/startups-saas.html" class="sol-card sc-lt">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">Startups &amp; SaaS</div>
+          <p class="sol-card-desc">Launch-ready sites built for signups, demos, and investor credibility. Hero that converts, pricing table that sells, and a brand presence that makes you look fundable from day one.</p>
+          <div class="sol-card-types">Early-stage Startups · SaaS Products · App Launches · Tech Ventures · MVPs</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:var(--lt)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More signups &amp; demos
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Creators & Freelancers -->
+      <a href="/solutions/creators-freelancers.html" class="sol-card sc-ind">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M20 21a8 8 0 1 0-16 0"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">Creators &amp; Freelancers</div>
+          <p class="sol-card-desc">Your work deserves a home that matches its quality. Portfolio-first design that showcases what you do, who you've done it for, and makes it effortless for clients to hire you.</p>
+          <div class="sol-card-types">Photographers · Designers · Musicians · Writers · Coaches · Influencers</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:var(--ind)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More brand deals &amp; clients
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY INDUSTRY-SPECIFIC ══ -->
+<section class="why-section">
+  <div class="container">
+    <div class="sec-label center" style="justify-content:center">Why Industry Expertise Matters</div>
+    <h2 class="sec-title center">Generic websites<br><span class="accent">don't win customers</span></h2>
+    <p class="sec-sub center">A plumber's website and a lawyer's website have almost nothing in common. The way customers search, evaluate, and decide is completely different — so the site has to be different too.</p>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="why-title">Different search intent</div>
+        <p class="why-desc">Someone Googling "emergency plumber near me" behaves completely differently to someone researching a solicitor for 6 weeks. We build for how your specific customer actually searches.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="why-title">Different trust signals</div>
+        <p class="why-desc">A restaurant needs photos and reviews front and centre. A B2B logistics company needs certifications and client logos. We know which signals move the needle for each type of buyer.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="why-title">Different conversion goals</div>
+        <p class="why-desc">A tradesperson needs calls and quote forms. An e-commerce brand needs add-to-cart. A coach needs a booking page. We design the conversion path around your business model, not a template.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="why-title">Different urgency levels</div>
+        <p class="why-desc">Emergency service? Your CTA needs to be the biggest thing on the page. High-consideration purchase? You need depth — case studies, qualifications, detailed service breakdowns. We adapt to both.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="why-title">Industry-specific SEO</div>
+        <p class="why-desc">The keywords, schema markup, and page structure that gets a restaurant ranked are completely different to what works for a freight company. We build the right SEO foundation for your space.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="why-title">Proven client results</div>
+        <p class="why-desc">We've built for real estate agents, HVAC contractors, freight companies, glass e-commerce brands, and beauty studios. Each one taught us something new about what works in that world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section class="process-strip">
+  <div class="container center">
+    <div class="sec-label" style="justify-content:center">How It Works</div>
+    <h2 class="sec-title">From brief to live<br><span class="accent">in 7 days flat</span></h2>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-content">
+          <div class="process-title">Tell us about your business</div>
+          <p class="process-desc">Fill our 2-minute brief — your industry, services, target audience, and style. No technical knowledge needed.</p>
+          <span class="process-tag">⏱ 2 minutes</span>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-content">
+          <div class="process-title">See your live preview</div>
+          <p class="process-desc">Our team builds a real, working preview of your site — built specifically for your industry. We walk through it together on a 20-min call.</p>
+          <span class="process-tag">⚡ 48 hours</span>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-content">
+          <div class="process-title">Launch &amp; we handle everything</div>
+          <p class="process-desc">Love it? We connect your domain, set up hosting, and go live. Then we manage your site continuously — updates, edits, backups, all included.</p>
+          <span class="process-tag">🌐 Live in 7 days</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NOT SURE WHICH FITS? ══ -->
+<section class="notsure">
+  <div class="container">
+    <div class="notsure-inner reveal">
+      <div class="notsure-text">
+        <h3>Not sure which solution fits your business?</h3>
+        <p>Just tell us what you do and we'll figure out the right approach together. Most businesses don't fit neatly into one box — and that's fine. We've worked across industries and built for businesses that blur the lines.</p>
+      </div>
+      <div class="notsure-actions">
+        <a href="/#contact" class="btn btn-blue btn-lg">Talk to Us →</a>
+        <a href="/#pricing" class="btn btn-outline">See Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<div class="sol-final-cta">
+  <div style="position:relative;z-index:1">
+    <div class="cta-hed">Ready to see your site<br>in 48 hours?</div>
+    <div class="cta-sub-t">Pick your industry above or just reach out — we'll handle the rest.</div>
+  </div>
+  <div class="cta-actions">
+    <div class="cta-btns">
+      <a href="/#contact" class="btn btn-blue btn-lg">Get My Free Preview →</a>
+      <a href="/#pricing" class="btn btn-outline btn-lg">See Pricing</a>
+    </div>
+    <div class="cta-note">✓ Free preview &nbsp;·&nbsp; ✓ No credit card &nbsp;·&nbsp; ✓ Cancel anytime</div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/js/includes.js" defer></script>
+</body>
+</html>
