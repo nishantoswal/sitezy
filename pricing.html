@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Professional Website Subscription from $39/mo | Sitezy</title>
+<meta name="description" content="Sitezy website subscriptions start at $39/month. No setup fee. No contracts. Preview your site free before you pay. See all plans.">
+<link rel="canonical" href="https://sitezy.co/pricing">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F71FF'/%3E%3Cpath d='M19.5 4.5L11 15.5h6.5L14.5 27.5l10-13H18l1.5-10z' fill='white' opacity='.95'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+.ph{background:var(--navy);padding:80px 20px 72px;text-align:center;position:relative;overflow:hidden}
+@media(min-width:768px){.ph{padding:100px 56px 88px}}
+.ph::before{content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:500px;border-radius:50%;background:radial-gradient(ellipse,rgba(79,113,255,.1) 0%,transparent 70%);pointer-events:none}
+.ph h1{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(36px,5vw,62px);font-weight:800;color:var(--white);letter-spacing:-2px;line-height:1.07;margin:14px 0 18px;position:relative;z-index:1}
+.ph h1 span{color:var(--blue3)}
+.ph-sub{font-size:clamp(17px,2vw,20px);color:var(--text2);font-weight:300;line-height:1.8;max-width:560px;margin:0 auto 32px;position:relative;z-index:1}
+.btog{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:8px;position:relative;z-index:1}
+.tlbl{font-size:15px;color:var(--text2);font-weight:400;transition:color .2s}
+.tlbl.on{color:var(--white);font-weight:600}
+.tsw{width:52px;height:28px;border-radius:100px;background:var(--blue);border:none;cursor:pointer;position:relative;transition:background .2s;flex-shrink:0}
+.tthumb{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .25s cubic-bezier(.34,1.56,.64,1);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.tsw.on .tthumb{transform:translateX(24px)}
+.sbadge{padding:5px 12px;border-radius:100px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:#4ADE80;font-size:12px;font-weight:700}
+.plans-wrap{background:var(--navy2);padding:56px 20px 80px}
+@media(min-width:768px){.plans-wrap{padding:64px 56px 96px}}
+.plans-g{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+@media(min-width:900px){.plans-g{grid-template-columns:repeat(3,1fr)}}
+.plan{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:40px 32px;transition:all .3s;position:relative}
+.plan:hover{transform:translateY(-6px);box-shadow:var(--sh-lg)}
+.plan.hot{border-color:var(--blue);background:rgba(79,113,255,.06)}
+@media(min-width:900px){.plan.hot{transform:scale(1.04)}}
+@media(min-width:900px){.plan.hot:hover{transform:scale(1.04) translateY(-6px)}}
+.pbadge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;padding:5px 18px;border-radius:100px;font-size:12px;font-weight:700;white-space:nowrap}
+.ptier{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue3);margin-bottom:6px}
+.pline{font-size:15px;color:var(--text2);font-style:italic;margin-bottom:22px}
+.prow{display:flex;align-items:flex-start;gap:3px;margin-bottom:4px}
+.psym{font-family:"Plus Jakarta Sans",sans-serif;font-size:20px;font-weight:700;color:var(--white);margin-top:12px}
+.pnum{font-family:"Plus Jakarta Sans",sans-serif;font-size:68px;font-weight:800;color:var(--white);line-height:1;letter-spacing:-3px;transition:all .3s}
+.pmo{font-size:14px;color:var(--text2);align-self:flex-end;padding-bottom:10px}
+.pnote{font-size:13px;color:var(--text3);margin-bottom:4px}
+.pdiv{height:1px;background:var(--border);margin:24px 0}
+.pfeats{list-style:none;display:flex;flex-direction:column;gap:13px}
+.pf{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--text2)}
+.pfck{width:20px;height:20px;border-radius:50%;flex-shrink:0;background:rgba(79,113,255,.12);border:1px solid rgba(79,113,255,.25);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.pfck svg{stroke:var(--blue3)}
+.pcta{display:block;text-align:center;margin-top:28px;padding:14px;border-radius:100px;font-family:"DM Sans",sans-serif;font-size:15px;font-weight:600;transition:all .25s}
+.pcta.solid{background:var(--blue);color:#fff;box-shadow:var(--sh-blue)}
+.pcta.solid:hover{transform:translateY(-1px);box-shadow:0 18px 50px rgba(79,113,255,.48)}
+.pcta.ghost{border:1.5px solid var(--border);color:var(--text2)}
+.pcta.ghost:hover{border-color:var(--border2);color:var(--white);background:rgba(79,113,255,.08)}
+.pnotes{text-align:center;margin-top:28px;font-size:14px;color:var(--text3)}
+.pcmp{background:var(--navy);padding:56px 20px 80px}
+@media(min-width:768px){.pcmp{padding:64px 56px 96px}}
+.cwrap{max-width:1000px;margin:48px auto 0;overflow-x:auto}
+table{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md)}
+thead th{background:var(--navy2);color:var(--white);padding:18px 24px;font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:700;text-align:left;border-bottom:1px solid var(--border)}
+thead th:not(:first-child){text-align:center}
+thead th.hl{background:var(--blue)}
+tbody td{padding:16px 24px;border-bottom:1px solid var(--border);font-size:14px;color:var(--text2);background:var(--card)}
+tbody td:not(:first-child){text-align:center;font-size:18px}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:rgba(79,113,255,.05)}
+td.fn{font-size:14px;font-weight:500;color:var(--white)}
+td.hlc{background:rgba(79,113,255,.08)}
+.yes{color:#4ADE80}.no{color:#F87171;font-size:16px}.partial{color:#FBBF24}
+.pfaq{background:var(--navy2);padding:56px 20px 80px}
+@media(min-width:768px){.pfaq{padding:64px 56px 96px}}
+.faq-list{max-width:780px;margin:48px auto 0;display:flex;flex-direction:column;gap:10px}
+.faq-item{border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--border2)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:pointer;font-family:"Plus Jakarta Sans",sans-serif;font-size:16px;font-weight:600;color:var(--white);gap:16px;user-select:none;background:var(--card)}
+.faq-ic{width:28px;height:28px;border-radius:50%;flex-shrink:0;background:rgba(79,113,255,.12);border:1px solid rgba(79,113,255,.25);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.faq-ic svg{stroke:var(--blue3);transition:transform .3s}
+.faq-item.open .faq-ic{background:var(--blue)}
+.faq-item.open .faq-ic svg{stroke:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;background:var(--card)}
+.faq-item.open .faq-a{max-height:320px}
+.faq-a-inner{padding:0 24px 22px;font-size:16px;color:var(--text2);line-height:1.8}
+.pcta-final{margin:0 16px 72px;border-radius:var(--r-2xl);background:linear-gradient(135deg,var(--navy3) 0%,#1A2050 50%,var(--navy4) 100%);border:1px solid rgba(79,113,255,.22);padding:56px 28px;text-align:center;position:relative;overflow:hidden}
+@media(min-width:768px){.pcta-final{margin:0 56px 80px;padding:80px}}
+.pcta-final::before{content:"";position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(79,113,255,.15) 0%,transparent 65%);pointer-events:none}
+.pcta-final h2{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:800;color:var(--white);letter-spacing:-1.5px;margin-bottom:12px;position:relative;z-index:1}
+.pcta-final p{font-size:17px;color:var(--text2);margin-bottom:32px;position:relative;z-index:1}
+.pcf-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="ph">
+  <div class="breadcrumb" style="justify-content:center;margin-bottom:20px"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Pricing</span></div>
+  <div class="sec-label" style="justify-content:center">Simple Pricing</div>
+  <h1>One flat fee.<br><span>Everything included.</span></h1>
+  <p class="ph-sub">No setup costs. No contracts. No hourly billing. One predictable monthly subscription that covers your website forever.</p>
+  <div class="btog">
+    <span class="tlbl on" id="lbl-mo">Monthly</span>
+    <button class="tsw" id="bill-switch" onclick="toggleBill()"><div class="tthumb"></div></button>
+    <span class="tlbl" id="lbl-yr">Annual</span>
+    <span class="sbadge">&#127881; Save 10%</span>
+  </div>
+</div>
+<div class="plans-wrap">
+  <div class="plans-g reveal">
+    <div class="plan">
+      <div class="ptier">Starter</div><div class="pline">"Perfect for getting your business online."</div>
+      <div class="prow"><span class="psym">$</span><span class="pnum" id="p-s">39</span><span class="pmo">/mo</span></div>
+      <div class="pnote">Billed monthly. Cancel anytime.</div><div class="pdiv"></div>
+      <ul class="pfeats">
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>1-page custom-designed website</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Lightning-fast CDN hosting</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>SSL certificate included</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Daily automated backups</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Human support included</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Mobile-first responsive</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>$0 setup fee, ever</li>
+      </ul>
+      <a href="/contact" class="pcta ghost">Get Started &#8594;</a>
+    </div>
+    <div class="plan hot">
+      <div class="pbadge">&#10022; Most Popular</div>
+      <div class="ptier">Growth</div><div class="pline">"For growing businesses wanting more leads."</div>
+      <div class="prow"><span class="psym">$</span><span class="pnum" id="p-g">69</span><span class="pmo">/mo</span></div>
+      <div class="pnote">Billed monthly. Cancel anytime.</div><div class="pdiv"></div>
+      <ul class="pfeats">
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>5-page custom site architecture</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Professional business email setup</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>SEO Foundation package</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Monthly content updates</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Contact forms + lead capture</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Google Analytics setup</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Starter</li>
+      </ul>
+      <a href="/contact" class="pcta solid">Get Started &#8594;</a>
+    </div>
+    <div class="plan">
+      <div class="ptier">Scale</div><div class="pline">"For market leaders who need a full web presence."</div>
+      <div class="prow"><span class="psym">$</span><span class="pnum" id="p-sc">99</span><span class="pmo">/mo</span></div>
+      <div class="pnote">Billed monthly. Cancel anytime.</div><div class="pdiv"></div>
+      <ul class="pfeats">
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>12-page deep site architecture</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>E-commerce ready (Shopify/Stripe)</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Priority concierge support</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Advanced analytics dashboard</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>CRM + booking integrations</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Quarterly design refresh</li>
+        <li class="pf"><span class="pfck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Everything in Growth</li>
+      </ul>
+      <a href="/contact" class="pcta ghost">Get Started &#8594;</a>
+    </div>
+  </div>
+  <p class="pnotes">&#128274; No credit card for preview &nbsp;&middot;&nbsp; &#10003; Preview before you pay &nbsp;&middot;&nbsp; &#10007; No long-term contracts</p>
+</div>
+<section class="pcmp">
+  <div class="container center">
+    <div class="sec-label" style="justify-content:center">How We Compare</div>
+    <h2 class="sec-title">Sitezy vs. the alternatives</h2>
+    <div class="cwrap reveal">
+      <table>
+        <thead><tr><th>Feature</th><th>DIY (Wix/Squarespace)</th><th>Traditional Agency</th><th class="hl">Sitezy</th></tr></thead>
+        <tbody>
+          <tr><td class="fn">Setup / Upfront Cost</td><td>Low but time-intensive</td><td>$3,000&#8211;$15,000+</td><td class="hlc" style="color:#4ADE80;font-size:14px;font-weight:700">$0 Always</td></tr>
+          <tr><td class="fn">Monthly Cost</td><td>$16&#8211;$49 + your time</td><td>$500&#8211;$3,000 retainer</td><td class="hlc" style="color:var(--blue3);font-size:14px;font-weight:700">$39&#8211;$99</td></tr>
+          <tr><td class="fn">Time to Launch</td><td>Days/Weeks of your time</td><td>4&#8211;16 weeks</td><td class="hlc" style="color:#4ADE80;font-size:14px;font-weight:700">7 Days</td></tr>
+          <tr><td class="fn">Custom Design</td><td class="no">&#10007;</td><td class="yes">&#10003;</td><td class="hlc yes">&#10003;</td></tr>
+          <tr><td class="fn">Unlimited Content Edits</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="hlc yes">&#10003;</td></tr>
+          <tr><td class="fn">Preview Before Paying</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="hlc yes">&#10003;</td></tr>
+          <tr><td class="fn">Ongoing Human Support</td><td class="no">&#10007;</td><td class="partial">&#9888; Extra cost</td><td class="hlc yes">&#10003;</td></tr>
+          <tr><td class="fn">Hosting &amp; SSL Included</td><td class="partial">&#9888; Separate plan</td><td class="partial">&#9888; Often extra</td><td class="hlc yes">&#10003;</td></tr>
+          <tr><td class="fn">SEO Foundation</td><td class="partial">&#9888; DIY only</td><td class="partial">&#9888; Extra cost</td><td class="hlc yes">&#10003;</td></tr>
+          <tr><td class="fn">Cancel Anytime</td><td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="hlc yes">&#10003;</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="pfaq">
+  <div class="container">
+    <div class="sec-label center" style="justify-content:center">Pricing Questions</div>
+    <h2 class="sec-title center">Everything you need<br><span class="accent">to know about pricing</span></h2>
+    <div class="faq-list">
+      <div class="faq-item open"><div class="faq-q" onclick="faq(this)">Is there really a $0 setup fee?<span class="faq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">Yes. We don't charge a setup fee at any plan level. Your first payment is your first monthly subscription — and only after you've approved the preview. We build your preview completely free.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)">What counts as an "unlimited edit"?<span class="faq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">Text changes, image swaps, pricing updates, new service items, contact info, hours, seasonal offers — all covered within 24 business hours. Full page redesigns are scoped separately but rarely needed.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)">Can I cancel at any time?<span class="faq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">Yes. No contracts, no cancellation fees, no lock-in. We ask for 30 days notice so we can provide a clean offboarding — including a full export of your website files.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)">What does the annual plan include?<span class="faq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">Annual billing gives you 10% off your monthly rate. Everything else is identical — same features, same support, same cancel-anytime policy. You pay annually upfront and save two months over the year.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="faq(this)">Can I change plans later?<span class="faq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><div class="faq-a-inner">Absolutely. Upgrade at any time and we expand your site immediately. Downgrade by giving 30 days notice and we adjust at the next billing cycle. No fees or penalties either way.</div></div></div>
+    </div>
+  </div>
+</section>
+<div class="pcta-final">
+  <h2>Start with a free preview.<br>Pay only if you love it.</h2>
+  <p>No credit card required. See your site in 48 hours &#8212; then decide.</p>
+  <div class="pcf-btns">
+    <a href="/contact" class="btn btn-blue btn-lg">Get My Free Preview &#8594;</a>
+    <a href="/how-it-works" class="btn btn-outline btn-lg">How It Works</a>
+  </div>
+</div>
+<div id="site-footer"></div>
+<script>
+const prices={s:39,g:69,sc:99};let annual=false;
+function toggleBill(){annual=!annual;const sw=document.getElementById("bill-switch");sw.classList.toggle("on",annual);document.getElementById("lbl-mo").classList.toggle("on",!annual);document.getElementById("lbl-yr").classList.toggle("on",annual);anim(document.getElementById("p-s"),annual?Math.floor(prices.s*.9):prices.s);anim(document.getElementById("p-g"),annual?Math.floor(prices.g*.9):prices.g);anim(document.getElementById("p-sc"),annual?Math.floor(prices.sc*.9):prices.sc)}
+function anim(el,target){const start=+el.textContent,diff=target-start,dur=320,t0=performance.now();function u(now){const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(start+diff*e);if(p<1)requestAnimationFrame(u)}requestAnimationFrame(u)}
+function faq(el){const item=el.parentElement,open=item.classList.contains("open");document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));if(!open)item.classList.add("open")}
+</script>
+<script src="/js/includes.js" defer></script>
+</body>
+</html>
