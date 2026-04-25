@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — Sitezy Website-as-a-Service</title>
+<meta name="description" content="How Sitezy works: fill a 2-minute brief, get a live 48-hour preview, then go live in 7 days. No technical knowledge needed. No credit card required.">
+<link rel="canonical" href="https://sitezy.co/how-it-works">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F71FF'/%3E%3Cpath d='M19.5 4.5L11 15.5h6.5L14.5 27.5l10-13H18l1.5-10z' fill='white' opacity='.95'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+.hiw-hero{background:var(--navy);padding:72px 20px 80px;position:relative;overflow:hidden;text-align:center}
+@media(min-width:768px){.hiw-hero{padding:96px 56px 96px}}
+.hiw-hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(79,113,255,.1) 0%,transparent 70%);pointer-events:none}
+.hiw-hero-inner{max-width:700px;margin:0 auto;position:relative;z-index:1}
+.hiw-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(36px,5vw,58px);font-weight:800;color:var(--white);letter-spacing:-2px;line-height:1.05;margin-top:14px;margin-bottom:18px}
+.hiw-hero h1 span{color:var(--blue3)}
+.hiw-hero p{font-size:clamp(17px,2vw,20px);color:var(--text2);line-height:1.8;font-weight:300}
+.steps-section{background:var(--navy2);padding:80px 20px}
+@media(min-width:768px){.steps-section{padding:96px 56px}}
+.steps-inner{max-width:1100px;margin:0 auto}
+.step-block{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;margin-top:72px;padding-top:72px;border-top:1px solid var(--border)}
+@media(min-width:768px){.step-block{grid-template-columns:1fr 1fr;gap:72px}}
+.step-block:first-child{margin-top:56px;padding-top:0;border-top:none}
+.step-block.rev{direction:rtl}
+.step-block.rev>*{direction:ltr}
+.step-num-badge{display:inline-flex;align-items:center;gap:12px;margin-bottom:20px}
+.snb-n{width:52px;height:52px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:#fff;box-shadow:var(--sh-blue);flex-shrink:0}
+.snb-label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue3)}
+.step-block h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(26px,3.5vw,38px);font-weight:800;color:var(--white);letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.step-block h2 span{color:var(--blue3)}
+.step-block p{font-size:17px;color:var(--text2);line-height:1.8;font-weight:300;margin-bottom:16px}
+.step-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;background:rgba(79,113,255,.12);border:1px solid var(--border2);font-size:13px;font-weight:600;color:var(--blue3)}
+.step-visual{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:36px;display:flex;flex-direction:column;gap:14px}
+.sv-row{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--navy);border:1px solid var(--border);border-radius:var(--r-md)}
+.sv-ic{width:36px;height:36px;border-radius:10px;background:rgba(79,113,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sv-ic svg{stroke:var(--blue3)}
+.sv-text{display:flex;flex-direction:column;gap:4px;flex:1}
+.sv-label{font-size:12px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.sv-val{font-size:15px;color:var(--white);font-weight:500}
+.sv-badge{padding:4px 12px;border-radius:100px;font-size:12px;font-weight:700}
+.sv-badge.green{background:rgba(34,197,94,.15);color:#4ADE80}
+.sv-badge.blue{background:rgba(79,113,255,.2);color:var(--blue3)}
+.ongoing-section{background:var(--navy);padding:80px 20px}
+@media(min-width:768px){.ongoing-section{padding:96px 56px}}
+.og-inner{max-width:1100px;margin:0 auto}
+.og-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:48px}
+@media(min-width:580px){.og-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.og-grid{grid-template-columns:repeat(4,1fr)}}
+.og-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;transition:all .3s}
+.og-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:var(--sh-md)}
+.og-ic{width:46px;height:46px;border-radius:14px;background:rgba(79,113,255,.12);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.og-ic svg{stroke:var(--blue3)}
+.og-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px}
+.og-desc{font-size:15px;color:var(--text2);line-height:1.75}
+.cta-band{margin:0 16px 72px;border-radius:var(--r-2xl);background:linear-gradient(135deg,var(--navy3) 0%,#1A2050 50%,var(--navy4) 100%);border:1px solid var(--border2);padding:56px 32px;text-align:center;position:relative;overflow:hidden}
+@media(min-width:768px){.cta-band{margin:0 56px 80px;padding:72px 56px}}
+.cta-band::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(79,113,255,.18) 0%,transparent 65%);pointer-events:none}
+.cta-band h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--white);letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;position:relative;z-index:1}
+.cta-band h2 span{color:var(--blue3)}
+.cta-band p{font-size:17px;color:var(--text2);margin-bottom:32px;font-weight:300;position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="hiw-hero">
+  <div class="hiw-hero-inner">
+    <div class="breadcrumb" style="justify-content:center"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span>How It Works</span></div>
+    <h1>From zero to live<br><span>in 7 days flat</span></h1>
+    <p>No technical knowledge. No long calls. No back-and-forth. Tell us about your business and watch your professional website come to life.</p>
+  </div>
+</div>
+
+<div class="steps-section">
+  <div class="steps-inner">
+    <div class="sec-label">The Process</div>
+    <h2 class="sec-title">Three steps.<br><span class="accent">One week. Live site.</span></h2>
+
+    <div class="step-block">
+      <div>
+        <div class="step-num-badge"><div class="snb-n">1</div><span class="snb-label">Step one · Takes 2 minutes</span></div>
+        <h2>Tell us about<br><span>your business</span></h2>
+        <p>Fill in our simple online brief — no technical knowledge needed. Tell us your business name, what you do, who your customers are, and the style and feel you're going for.</p>
+        <p>We'll ask about your services, your service area or target market, any photos or content you have, and what you want visitors to do when they land on your site.</p>
+        <div class="step-tag">⏱ Takes 2 minutes</div>
+      </div>
+      <div class="step-visual">
+        <div class="sv-row"><div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg></div><div class="sv-text"><div class="sv-label">Business name</div><div class="sv-val">Your Brand</div></div></div>
+        <div class="sv-row"><div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="sv-text"><div class="sv-label">Service area</div><div class="sv-val">Your city / region</div></div></div>
+        <div class="sv-row"><div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="sv-text"><div class="sv-label">Goal</div><div class="sv-val">More calls / bookings</div></div><span class="sv-badge blue">Set</span></div>
+      </div>
+    </div>
+
+    <div class="step-block rev">
+      <div>
+        <div class="step-num-badge"><div class="snb-n">2</div><span class="snb-label">Step two · 48 hours later</span></div>
+        <h2>See your live<br><span>preview site</span></h2>
+        <p>Our expert design team builds a real, fully working preview of your site within 48 hours. This isn't a mockup or a screenshot — it's a live URL you can click through on any device.</p>
+        <p>We schedule a 20-minute walkthrough call to review it together. You tell us what you love and what to change. We apply revisions and you confirm it's ready to launch.</p>
+        <div class="step-tag">⚡ Live URL in 48 hours</div>
+      </div>
+      <div class="step-visual">
+        <div class="sv-row"><div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="sv-text"><div class="sv-label">Preview status</div><div class="sv-val">yoursite.sitezy.co</div></div><span class="sv-badge green">Live</span></div>
+        <div class="sv-row"><div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="sv-text"><div class="sv-label">Review call</div><div class="sv-val">20-min walkthrough booked</div></div></div>
+        <div class="sv-row"><div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="sv-text"><div class="sv-label">Revisions</div><div class="sv-val">Applied within 24 hours</div></div></div>
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div>
+        <div class="step-num-badge"><div class="snb-n">3</div><span class="snb-label">Step three · Day 5–7</span></div>
+        <h2>Launch &amp; we handle<br><span>everything forever</span></h2>
+        <p>Love it? We connect your domain, configure hosting, set up your business email, and go live. Your site is submitted to Google Search Console and your sitemap is indexed.</p>
+        <p>From launch onwards, we manage everything — hosting, backups, security, updates, and any content edits you need. You run your business; we run your website.</p>
+        <div class="step-tag">🚀 Live in 7 days</div>
+      </div>
+      <div class="step-visual">
+        <div class="sv-row"><div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="sv-text"><div class="sv-label">Domain</div><div class="sv-val">yourbusiness.com → connected</div></div><span class="sv-badge green">Live</span></div>
+        <div class="sv-row"><div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="sv-text"><div class="sv-label">Google Search Console</div><div class="sv-val">Sitemap submitted &amp; indexed</div></div><span class="sv-badge green">Done</span></div>
+        <div class="sv-row"><div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="sv-text"><div class="sv-label">Ongoing management</div><div class="sv-val">Sitezy handles everything</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ongoing-section">
+  <div class="og-inner">
+    <div class="sec-label">After Launch</div>
+    <h2 class="sec-title">What's included<br><span class="accent">every single month</span></h2>
+    <p class="sec-sub">Your subscription isn't just for the build — it's for everything that keeps your site performing.</p>
+    <div class="og-grid reveal">
+      <div class="og-card"><div class="og-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="og-title">Unlimited Edits</div><p class="og-desc">Text, images, pricing, services — send us a message and changes go live within 24 hours.</p></div>
+      <div class="og-card"><div class="og-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="og-title">Security &amp; SSL</div><p class="og-desc">Auto-renewing SSL, DDoS protection, and continuous security monitoring — all managed.</p></div>
+      <div class="og-card"><div class="og-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div><div class="og-title">Daily Backups</div><p class="og-desc">Your site backed up every 24 hours. If anything goes wrong, we restore it in minutes.</p></div>
+      <div class="og-card"><div class="og-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="og-title">Performance Reports</div><p class="og-desc">Monthly analytics summary so you always know how your site is performing.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Ready to see your site<br><span>in 48 hours?</span></h2>
+  <p>Fill in a 2-minute brief. We build the preview. You only pay when you love it.</p>
+  <div class="cta-btns">
+    <a href="/contact" class="btn btn-blue btn-lg">Get My Free Preview →</a>
+    <a href="/pricing" class="btn btn-outline btn-lg">View Pricing</a>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*70);obs.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="/js/includes.js" defer></script>
+</body>
+</html>
