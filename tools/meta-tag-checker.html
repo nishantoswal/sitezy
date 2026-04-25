@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Meta Tag Checker — Google SERP Preview Tool — Sitezy</title>
+<meta name="description" content="See exactly how your page title and meta description appear in Google search results. Free browser-based tool with character count, warnings, and mobile/desktop previews.">
+<link rel="canonical" href="https://sitezy.co/tools/meta-tag-checker">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F71FF'/%3E%3Cpath d='M19.5 4.5L11 15.5h6.5L14.5 27.5l10-13H18l1.5-10z' fill='white' opacity='.95'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+.tool-hero{background:var(--navy);padding:56px 20px 48px;border-bottom:1px solid var(--border)}
+@media(min-width:768px){.tool-hero{padding:72px 56px 64px}}
+.tool-hero-inner{max-width:900px;margin:0 auto}
+.tool-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--white);letter-spacing:-1.5px;line-height:1.1;margin-top:14px}
+.tool-hero h1 span{color:var(--blue3)}
+.tool-hero-sub{font-size:17px;color:var(--text2);font-weight:300;line-height:1.75;margin-top:12px}
+.tool-body{background:var(--navy2);padding:48px 20px 80px}
+@media(min-width:768px){.tool-body{padding:56px 56px 100px}}
+.tool-inner{max-width:900px;margin:0 auto}
+.tool-layout{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:840px){.tool-layout{grid-template-columns:1fr 1fr}}
+.tool-panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:28px 24px}
+.panel-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.panel-title svg{stroke:var(--blue3)}
+.tfield{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.tfield label{font-size:13.5px;font-weight:600;color:var(--text2)}
+.tfield input,.tfield textarea{width:100%;padding:12px 14px;background:var(--navy);border:1px solid var(--border);border-radius:var(--r-md);font-family:'DM Sans',sans-serif;font-size:15px;color:var(--white);outline:none;transition:border-color .2s}
+.tfield input:focus,.tfield textarea:focus{border-color:var(--blue)}
+.tfield textarea{resize:vertical;min-height:90px}
+.char-row{display:flex;justify-content:space-between;align-items:center;margin-top:5px}
+.char-count{font-size:12px;font-weight:600}
+.char-ok{color:#4ADE80}
+.char-warn{color:var(--amber)}
+.char-over{color:#F87171}
+.char-bar{height:3px;border-radius:2px;background:var(--border);margin-top:6px;overflow:hidden}
+.char-fill{height:100%;border-radius:2px;transition:width .2s,background .2s}
+/* SERP Preview */
+.serp-preview{background:#fff;border-radius:var(--r-lg);padding:20px;font-family:Arial,sans-serif}
+.serp-url{font-size:12px;color:#202124;display:flex;align-items:center;gap:6px;margin-bottom:2px}
+.serp-favicon{width:16px;height:16px;background:#4F71FF;border-radius:3px;flex-shrink:0}
+.serp-domain{font-size:14px;color:#202124;line-height:1.4}
+.serp-breadcrumb{font-size:12px;color:#4D5156}
+.serp-title{font-size:20px;color:#1A0DAB;line-height:1.3;margin:4px 0;cursor:pointer;transition:color .1s}
+.serp-title:hover{text-decoration:underline}
+.serp-title.truncated{color:#1A0DAB}
+.serp-desc{font-size:14px;color:#4D5156;line-height:1.58;margin-top:2px}
+.serp-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
+.serp-wrap{background:var(--navy);border-radius:var(--r-lg);padding:16px}
+.tips-list{display:flex;flex-direction:column;gap:10px;margin-top:0}
+.tip-item{display:flex;gap:12px;padding:14px;background:var(--navy);border-radius:var(--r-md);border:1px solid var(--border);font-size:14px;color:var(--text2);align-items:flex-start}
+.tip-ic{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.tip-ok{background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.25);color:#4ADE80}
+.tip-warn{background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.25);color:var(--amber)}
+.tip-bad{background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.25);color:#F87171}
+.tool-cta-strip{background:var(--navy3);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 28px;margin-top:28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.tool-cta-strip p{font-size:15px;color:var(--text2);margin:0;flex:1}
+.tool-cta-strip strong{color:var(--white)}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="tool-hero">
+  <div class="tool-hero-inner">
+    <div class="breadcrumb" style="justify-content:flex-start"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/tools/">SEO Tools</a><span class="breadcrumb-sep">›</span><span>Meta Tag Checker</span></div>
+    <h1>Meta Tag Checker &amp;<br><span>Google SERP Preview</span></h1>
+    <p class="tool-hero-sub">See exactly how your page appears in Google before you publish. Enter your title, description, and URL to get a live preview with character counts and SEO recommendations.</p>
+  </div>
+</div>
+
+<div class="tool-body">
+  <div class="tool-inner">
+    <div class="tool-layout">
+      <div>
+        <div class="tool-panel">
+          <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Your Page Details</div>
+
+          <div class="tfield">
+            <label>Page URL (used for breadcrumb)</label>
+            <input type="url" id="inp-url" placeholder="https://yourbusiness.com/your-page" oninput="update()">
+          </div>
+
+          <div class="tfield">
+            <label>Page Title <span style="color:var(--blue3)">*</span></label>
+            <input type="text" id="inp-title" placeholder="Your Page Title — Brand Name" oninput="update()" maxlength="120">
+            <div class="char-row">
+              <span class="char-count" id="title-count">0 / 60 characters</span>
+              <span id="title-status" style="font-size:12px;font-weight:600"></span>
+            </div>
+            <div class="char-bar"><div class="char-fill" id="title-bar" style="width:0%;background:#4ADE80"></div></div>
+          </div>
+
+          <div class="tfield">
+            <label>Meta Description <span style="color:var(--blue3)">*</span></label>
+            <textarea id="inp-desc" placeholder="Your meta description — summarise what the page is about in a way that makes someone want to click." oninput="update()"></textarea>
+            <div class="char-row">
+              <span class="char-count" id="desc-count">0 / 160 characters</span>
+              <span id="desc-status" style="font-size:12px;font-weight:600"></span>
+            </div>
+            <div class="char-bar"><div class="char-fill" id="desc-bar" style="width:0%;background:#4ADE80"></div></div>
+          </div>
+
+          <div class="tfield">
+            <label>Site / Brand Name (optional)</label>
+            <input type="text" id="inp-brand" placeholder="Your Brand" oninput="update()">
+          </div>
+        </div>
+
+        <div class="tool-panel" style="margin-top:16px">
+          <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>SEO Tips</div>
+          <div class="tips-list" id="tips-list">
+            <div class="tip-item"><div class="tip-ic tip-warn">i</div><div>Enter your title and description above to get personalised recommendations.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="tool-panel">
+          <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Google Preview</div>
+          <div class="serp-label">How it looks on desktop Google</div>
+          <div class="serp-wrap">
+            <div class="serp-preview" id="serp-desktop">
+              <div class="serp-url">
+                <div class="serp-favicon"></div>
+                <div>
+                  <div class="serp-domain" id="prev-domain">yourbusiness.com</div>
+                  <div class="serp-breadcrumb" id="prev-breadcrumb">yourbusiness.com › page</div>
+                </div>
+              </div>
+              <div class="serp-title" id="prev-title" style="color:#9aa0a6;font-style:italic">Your page title will appear here</div>
+              <div class="serp-desc" id="prev-desc" style="color:#9aa0a6;font-style:italic">Your meta description will appear here. Make it compelling — this is your ad in Google search results.</div>
+            </div>
+          </div>
+
+          <div class="serp-label" style="margin-top:20px">Mobile preview</div>
+          <div class="serp-wrap">
+            <div class="serp-preview" id="serp-mobile" style="font-size:92%">
+              <div class="serp-url">
+                <div class="serp-favicon" style="width:14px;height:14px"></div>
+                <div>
+                  <div class="serp-domain" id="mob-domain" style="font-size:13px">yourbusiness.com</div>
+                  <div class="serp-breadcrumb" id="mob-breadcrumb" style="font-size:11px">yourbusiness.com › page</div>
+                </div>
+              </div>
+              <div class="serp-title" id="mob-title" style="font-size:18px;color:#9aa0a6;font-style:italic">Your page title will appear here</div>
+              <div class="serp-desc" id="mob-desc" style="font-size:13px;color:#9aa0a6;font-style:italic">Your meta description will appear here.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" style="margin-top:16px">
+          <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Generated HTML Tags</div>
+          <pre id="html-output" style="background:var(--navy);padding:16px;border-radius:var(--r-md);font-size:13px;color:#A5B4FC;overflow-x:auto;line-height:1.65;white-space:pre-wrap;word-break:break-all;border:1px solid var(--border)"><span style="color:var(--text3)">&#x2F;&#x2F; Fill in the fields above to generate your meta tags</span></pre>
+          <button onclick="copyHTML()" style="margin-top:12px;padding:10px 20px;background:var(--blue);color:#fff;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer" id="copy-btn">Copy HTML Tags</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-cta-strip">
+      <p><strong>Want all this handled for you?</strong> Every Sitezy site is built with properly structured meta tags, schema markup, and SEO foundations baked in — so you never have to worry about getting it right yourself.</p>
+      <a href="/contact.html" class="btn btn-blue">Get My Free Preview →</a>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script>
+const TITLE_IDEAL=60,TITLE_MAX=70,DESC_IDEAL=155,DESC_MAX=165;
+
+function update(){
+  const url=document.getElementById('inp-url').value.trim();
+  const title=document.getElementById('inp-title').value;
+  const desc=document.getElementById('inp-desc').value;
+  const brand=document.getElementById('inp-brand').value.trim();
+
+  // URL parts
+  let domain='yourbusiness.com',breadcrumb='yourbusiness.com › page';
+  if(url){try{const u=new URL(url);domain=u.hostname;const path=u.pathname.replace(/\//g,' › ').replace(/^[›\s]+/,'').replace(/\.html$/,'');breadcrumb=domain+(path?' › '+path:'');}catch(e){}}
+  ['prev-domain','mob-domain'].forEach(id=>{document.getElementById(id).textContent=domain});
+  ['prev-breadcrumb','mob-breadcrumb'].forEach(id=>{document.getElementById(id).textContent=breadcrumb});
+
+  // Title
+  const tLen=title.length;
+  const titleTrunc=title.length>TITLE_MAX?title.slice(0,TITLE_MAX)+'…':title;
+  const titleMobTrunc=title.length>55?title.slice(0,55)+'…':title;
+  updateField('title',tLen,TITLE_IDEAL,TITLE_MAX);
+  ['prev-title','mob-title'].forEach((id,i)=>{
+    const el=document.getElementById(id);
+    el.textContent=title||(brand?brand+' — Page Title':'Your page title will appear here');
+    el.style.color=title?'#1A0DAB':'#9aa0a6';
+    el.style.fontStyle=title?'normal':'italic';
+    if(i===1) el.textContent=titleMobTrunc||(brand?brand+' — Title':'Your page title will appear here');
+  });
+
+  // Desc
+  const dLen=desc.length;
+  const descTrunc=desc.length>DESC_MAX?desc.slice(0,DESC_MAX)+'…':desc;
+  const descMob=desc.length>120?desc.slice(0,120)+'…':desc;
+  updateField('desc',dLen,DESC_IDEAL,DESC_MAX);
+  const pd=document.getElementById('prev-desc');
+  pd.textContent=descTrunc||'Your meta description will appear here. Make it compelling — this is your ad in Google search results.';
+  pd.style.color=desc?'#4D5156':'#9aa0a6';pd.style.fontStyle=desc?'normal':'italic';
+  const md=document.getElementById('mob-desc');
+  md.textContent=descMob||'Your meta description will appear here.';
+  md.style.color=desc?'#4D5156':'#9aa0a6';md.style.fontStyle=desc?'normal':'italic';
+
+  // HTML output
+  const canonical=url?`\n<link rel="canonical" href="${url}">`:''
+  const tags=title||desc?`<title>${title||'Page Title'}</title>\n<meta name="description" content="${desc||'Page description'}">${canonical}`:'// Fill in the fields above to generate your meta tags';
+  document.getElementById('html-output').textContent=tags;
+
+  // Tips
+  buildTips(title,desc,tLen,dLen);
+}
+
+function updateField(field,len,ideal,max){
+  const count=document.getElementById(field+'-count');
+  const bar=document.getElementById(field+'-bar');
+  const status=document.getElementById(field+'-status');
+  const label=field==='title'?'60':'160';
+  count.textContent=`${len} / ${label} characters`;
+  const pct=Math.min(len/max*100,100);
+  bar.style.width=pct+'%';
+  if(len===0){bar.style.background='var(--border)';count.className='char-count';status.textContent=''}
+  else if(len<=ideal){bar.style.background='#4ADE80';count.className='char-count char-ok';status.textContent='✓ Good length'}
+  else if(len<=max){bar.style.background='var(--amber)';count.className='char-count char-warn';status.textContent='⚠ Near limit'}
+  else{bar.style.background='#F87171';count.className='char-count char-over';status.textContent='✗ Too long — will be cut'}
+}
+
+function buildTips(title,desc,tLen,dLen){
+  const tips=[];
+  if(!title) tips.push({type:'bad',text:'No title set. Every page must have a unique title tag — it\'s the most important on-page SEO element.'});
+  else if(tLen<20) tips.push({type:'warn',text:`Your title is very short (${tLen} chars). Aim for 40–60 characters to give Google more context.`});
+  else if(tLen<=60) tips.push({type:'ok',text:`Great title length (${tLen} chars). Google typically shows the full title in search results.`});
+  else if(tLen<=70) tips.push({type:'warn',text:`Your title is ${tLen} characters — near the limit. Google may truncate it on some screens.`});
+  else tips.push({type:'bad',text:`Title is too long (${tLen} chars). Google will cut it at around 60–70 characters. Shorten it.`});
+
+  if(!desc) tips.push({type:'bad',text:'No meta description set. While not a direct ranking factor, it significantly affects click-through rate.'});
+  else if(dLen<70) tips.push({type:'warn',text:`Description is very short (${dLen} chars). Add more to fill the snippet — Google may replace it with page content otherwise.`});
+  else if(dLen<=155) tips.push({type:'ok',text:`Great description length (${dLen} chars). It will display fully in Google results.`});
+  else if(dLen<=165) tips.push({type:'warn',text:`Description is ${dLen} characters — near the limit. Google may truncate with an ellipsis.`});
+  else tips.push({type:'bad',text:`Description is too long (${dLen} chars). Google will cut it. Aim for under 155 characters.`});
+
+  if(title&&!title.includes(' - ')&&!title.includes(' | ')&&!title.includes(' — ')) tips.push({type:'warn',text:'Consider adding your brand name at the end of the title (e.g., "Page Title — Brand Name") for better recognition.'});
+  if(desc&&!desc.includes('.')){} // skip
+  if(title&&desc&&title.slice(0,30).toLowerCase()===desc.slice(0,30).toLowerCase()) tips.push({type:'warn',text:'Your title and description start the same way. Make them different to provide distinct signals to Google.'});
+
+  const html=tips.map(t=>`<div class="tip-item"><div class="tip-ic tip-${t.type}">${t.type==='ok'?'✓':t.type==='warn'?'!':'✗'}</div><div>${t.text}</div></div>`).join('');
+  document.getElementById('tips-list').innerHTML=html||'<div class="tip-item"><div class="tip-ic tip-ok">✓</div><div>Looking good! Your meta tags are well-optimised.</div></div>';
+}
+
+function copyHTML(){
+  const text=document.getElementById('html-output').textContent;
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=document.getElementById('copy-btn');
+    btn.textContent='Copied! ✓';
+    setTimeout(()=>btn.textContent='Copy HTML Tags',2000);
+  });
+}
+</script>
+<script src="/js/includes.js" defer></script>
+</body>
+</html>

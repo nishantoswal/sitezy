@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Keyword Density Checker — Analyse Your Page Copy — Sitezy</title>
+<meta name="description" content="Paste your page content to analyse keyword frequency, density percentage, and readability. Identify over-optimised keywords and find content improvement opportunities.">
+<link rel="canonical" href="https://sitezy.co/tools/keyword-density">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F71FF'/%3E%3Cpath d='M19.5 4.5L11 15.5h6.5L14.5 27.5l10-13H18l1.5-10z' fill='white' opacity='.95'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+.tool-hero{background:var(--navy);padding:56px 20px 48px;border-bottom:1px solid var(--border)}
+@media(min-width:768px){.tool-hero{padding:72px 56px 64px}}
+.tool-hero-inner{max-width:1000px;margin:0 auto}
+.tool-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--white);letter-spacing:-1.5px;line-height:1.1;margin-top:14px}
+.tool-hero h1 span{color:var(--blue3)}
+.tool-hero-sub{font-size:17px;color:var(--text2);font-weight:300;line-height:1.75;margin-top:12px}
+.tool-body{background:var(--navy2);padding:48px 20px 80px}
+@media(min-width:768px){.tool-body{padding:56px 56px 100px}}
+.tool-inner{max-width:1000px;margin:0 auto}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:28px 24px;margin-bottom:20px}
+.panel-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.panel-title svg{stroke:var(--blue3)}
+.text-input{width:100%;padding:16px;background:var(--navy);border:1px solid var(--border);border-radius:var(--r-md);font-family:'DM Sans',sans-serif;font-size:15px;color:var(--white);line-height:1.7;resize:vertical;min-height:200px;outline:none;transition:border-color .2s}
+.text-input:focus{border-color:var(--blue)}
+.options-row{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap;align-items:center}
+.opt-label{font-size:13.5px;color:var(--text2);font-weight:500;display:flex;align-items:center;gap:8px;cursor:pointer}
+.opt-label input[type=checkbox]{width:16px;height:16px;accent-color:var(--blue);cursor:pointer}
+.kw-filter{padding:9px 14px;background:var(--navy);border:1px solid var(--border);border-radius:var(--r-md);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--white);outline:none;width:240px}
+.kw-filter:focus{border-color:var(--blue)}
+.btn-check{padding:11px 28px;background:var(--blue);color:#fff;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .22s}
+.btn-check:hover{background:var(--blue2)}
+.btn-clear{padding:11px 18px;background:transparent;color:var(--text3);border:none;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer}
+/* Stats row */
+.stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+@media(min-width:580px){.stats-row{grid-template-columns:repeat(4,1fr)}}
+.stat-card{background:var(--navy);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 16px;text-align:center}
+.stat-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:var(--white);letter-spacing:-1px;line-height:1}
+.stat-l{font-size:12px;color:var(--text3);margin-top:6px}
+/* Table */
+.kw-table-wrap{overflow-x:auto}
+.kw-table{width:100%;border-collapse:collapse;font-size:14px}
+.kw-table th{text-align:left;padding:12px 16px;background:var(--navy3);color:var(--text3);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.kw-table td{padding:10px 16px;border-bottom:1px solid var(--border);background:var(--card);vertical-align:middle}
+.kw-table tr:hover td{background:rgba(255,255,255,.02)}
+.kw-table tr:last-child td{border-bottom:none}
+.kw-word{font-weight:600;color:var(--white);font-size:15px}
+.kw-count{color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700}
+.density-bar-wrap{width:120px;height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.density-bar{height:100%;border-radius:4px;transition:width .4s}
+.density-low{background:var(--blue3)}
+.density-ok{background:#4ADE80}
+.density-high{background:var(--amber)}
+.density-over{background:#F87171}
+.density-pct{font-size:13px;font-weight:600;min-width:48px}
+.readability-panel{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(min-width:640px){.readability-panel{grid-template-columns:repeat(4,1fr)}}
+.read-card{background:var(--navy);border:1px solid var(--border);border-radius:var(--r-md);padding:14px;text-align:center}
+.read-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;color:var(--white);line-height:1}
+.read-l{font-size:12px;color:var(--text3);margin-top:4px}
+.tab-btns{display:flex;gap:8px;margin-bottom:16px}
+.tab-btn{padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:transparent;color:var(--text2);font-family:'DM Sans',sans-serif;transition:all .2s}
+.tab-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.tool-cta-strip{background:var(--navy3);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 28px;margin-top:0;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.tool-cta-strip p{font-size:15px;color:var(--text2);margin:0;flex:1}
+.tool-cta-strip strong{color:var(--white)}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="tool-hero">
+  <div class="tool-hero-inner">
+    <div class="breadcrumb" style="justify-content:flex-start"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/tools/">SEO Tools</a><span class="breadcrumb-sep">›</span><span>Keyword Density</span></div>
+    <h1>Keyword Density<br><span>Checker</span></h1>
+    <p class="tool-hero-sub">Paste your page copy and instantly analyse keyword frequency, density percentage, and readability. Spot over-optimised terms and find gaps in your content.</p>
+  </div>
+</div>
+
+<div class="tool-body">
+  <div class="tool-inner">
+    <div class="panel">
+      <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Paste Your Content</div>
+      <textarea class="text-input" id="content-input" placeholder="Paste your page content, article, or any text here to analyse keyword density and readability..."></textarea>
+      <div class="options-row">
+        <label class="opt-label"><input type="checkbox" id="exclude-stops" checked> Exclude stop words (the, and, is…)</label>
+        <input class="kw-filter" type="text" id="kw-filter" placeholder="Filter results by keyword…" oninput="filterTable()">
+        <button class="btn-check" onclick="analyse()">Analyse Content</button>
+        <button class="btn-clear" onclick="clearAll()">Clear</button>
+      </div>
+    </div>
+
+    <div id="results" style="display:none">
+      <div class="stats-row" id="stats-row"></div>
+
+      <div class="panel">
+        <div class="tab-btns">
+          <button class="tab-btn active" onclick="switchView('words',this)">Single Words</button>
+          <button class="tab-btn" onclick="switchView('bigrams',this)">2-Word Phrases</button>
+          <button class="tab-btn" onclick="switchView('trigrams',this)">3-Word Phrases</button>
+          <button class="tab-btn" onclick="switchView('readability',this)">Readability</button>
+        </div>
+
+        <div id="view-words" class="kw-table-wrap">
+          <table class="kw-table"><thead><tr><th>Keyword</th><th>Count</th><th>Density</th><th style="min-width:140px">Visualise</th><th>Status</th></tr></thead><tbody id="words-body"></tbody></table>
+        </div>
+        <div id="view-bigrams" class="kw-table-wrap" style="display:none">
+          <table class="kw-table"><thead><tr><th>2-Word Phrase</th><th>Count</th><th>Density</th><th style="min-width:140px">Visualise</th></tr></thead><tbody id="bigrams-body"></tbody></table>
+        </div>
+        <div id="view-trigrams" class="kw-table-wrap" style="display:none">
+          <table class="kw-table"><thead><tr><th>3-Word Phrase</th><th>Count</th><th>Density</th><th style="min-width:140px">Visualise</th></tr></thead><tbody id="trigrams-body"></tbody></table>
+        </div>
+        <div id="view-readability" style="display:none;padding:4px 0">
+          <div class="readability-panel" id="readability-panel"></div>
+        </div>
+      </div>
+
+      <div class="tool-cta-strip">
+        <p><strong>Content strategy beyond the tool.</strong> Every Sitezy site is built with keyword-researched copy specifically targeting searches your customers make — not just high-density filler.</p>
+        <a href="/contact.html" class="btn btn-blue">Get My Free Preview →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script>
+const STOP_WORDS=new Set(['a','an','the','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','shall','can','it','its','this','that','these','those','i','you','he','she','we','they','me','him','her','us','them','my','your','his','our','their','what','which','who','if','as','not','no','so','up','out','about','into','than','then','when','where','there','here','all','some','any','each','every','both','more','most','also','just','like','other','new','first','only','even','over','such','well','own','same','still','after','before','between','through','during','while','how','very','much','many','back','way','too','get','got','go','make','made','take','know','see','come','think','use','time','good','great','right','day','man','men','people','now','look','set','put','end','why','turn','say','said','need','want','work','long','down','old','year','way','give','its','your','us','our','call','find','place','thing','things','small','large','big','little','feel','keep','let','try','leave','never','always','often','again','hand','part','place','case','week','company','different','number','off','always']);
+
+let lastWords=[],lastBigrams=[],lastTrigrams=[];
+
+function clearAll(){document.getElementById('content-input').value='';document.getElementById('kw-filter').value='';document.getElementById('results').style.display='none';}
+
+function switchView(view,btn){
+  ['words','bigrams','trigrams','readability'].forEach(v=>{
+    const el=document.getElementById('view-'+v);if(el)el.style.display='none';
+  });
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('view-'+view).style.display='block';
+  btn.classList.add('active');
+}
+
+function filterTable(){
+  const f=document.getElementById('kw-filter').value.toLowerCase();
+  document.querySelectorAll('#words-body tr,#bigrams-body tr,#trigrams-body tr').forEach(row=>{
+    const kw=row.querySelector('td')?.textContent.toLowerCase()||'';
+    row.style.display=kw.includes(f)?'':'none';
+  });
+}
+
+function analyse(){
+  const text=document.getElementById('content-input').value.trim();
+  if(!text){alert('Please paste some content first.');return;}
+  const excludeStops=document.getElementById('exclude-stops').checked;
+
+  // Tokenise
+  const raw=text.toLowerCase().replace(/[^a-z0-9\s'-]/g,' ').split(/\s+/).filter(w=>w.length>0);
+  const tokens=raw.map(w=>w.replace(/^['-]+|['-]+$/g,''));
+  const totalWords=tokens.filter(w=>w.length>0).length;
+
+  // Word freq
+  const wordFreq={};
+  tokens.forEach(w=>{
+    if(!w||w.length<2)return;
+    if(excludeStops&&STOP_WORDS.has(w))return;
+    wordFreq[w]=(wordFreq[w]||0)+1;
+  });
+  lastWords=Object.entries(wordFreq).sort((a,b)=>b[1]-a[1]).slice(0,50);
+
+  // Bigrams
+  const bigramFreq={};
+  for(let i=0;i<tokens.length-1;i++){
+    const a=tokens[i],b=tokens[i+1];
+    if(!a||!b||a.length<2||b.length<2)continue;
+    if(excludeStops&&(STOP_WORDS.has(a)||STOP_WORDS.has(b)))continue;
+    const key=a+' '+b;bigramFreq[key]=(bigramFreq[key]||0)+1;
+  }
+  lastBigrams=Object.entries(bigramFreq).sort((a,b)=>b[1]-a[1]).slice(0,30);
+
+  // Trigrams
+  const trigramFreq={};
+  for(let i=0;i<tokens.length-2;i++){
+    const a=tokens[i],b=tokens[i+1],c=tokens[i+2];
+    if(!a||!b||!c||a.length<2||b.length<2||c.length<2)continue;
+    const key=a+' '+b+' '+c;trigramFreq[key]=(trigramFreq[key]||0)+1;
+  }
+  lastTrigrams=Object.entries(trigramFreq).filter(([,v])=>v>1).sort((a,b)=>b[1]-a[1]).slice(0,20);
+
+  // Stats
+  const sentences=text.split(/[.!?]+/).filter(s=>s.trim().length>0).length;
+  const uniqueWords=Object.keys(wordFreq).length;
+  const avgSentLen=Math.round(totalWords/Math.max(sentences,1));
+
+  document.getElementById('stats-row').innerHTML=`
+    <div class="stat-card"><div class="stat-n">${totalWords.toLocaleString()}</div><div class="stat-l">Total Words</div></div>
+    <div class="stat-card"><div class="stat-n">${uniqueWords.toLocaleString()}</div><div class="stat-l">Unique Keywords</div></div>
+    <div class="stat-card"><div class="stat-n">${sentences}</div><div class="stat-l">Sentences</div></div>
+    <div class="stat-card"><div class="stat-n">${avgSentLen}</div><div class="stat-l">Avg Words/Sentence</div></div>`;
+
+  renderWordTable(lastWords,totalWords);
+  renderNgramTable('bigrams',lastBigrams,totalWords);
+  renderNgramTable('trigrams',lastTrigrams,totalWords);
+  renderReadability(text,totalWords,sentences);
+
+  document.getElementById('results').style.display='block';
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderWordTable(words,total){
+  const maxCount=words[0]?.[1]||1;
+  document.getElementById('words-body').innerHTML=words.map(([w,c])=>{
+    const pct=(c/total*100);
+    const barPct=c/maxCount*100;
+    let barClass='density-low',status='',statusStyle='';
+    if(pct>5){barClass='density-over';status='⚠ Over-optimised';statusStyle='color:#F87171'}
+    else if(pct>3){barClass='density-high';status='! High density';statusStyle='color:var(--amber)'}
+    else if(pct>=1&&pct<=3){barClass='density-ok';status='✓ Good range';statusStyle='color:#4ADE80'}
+    return`<tr><td class="kw-word">${w}</td><td class="kw-count">${c}</td><td class="density-pct">${pct.toFixed(2)}%</td><td><div class="density-bar-wrap"><div class="density-bar ${barClass}" style="width:${barPct}%"></div></div></td><td style="font-size:13px;font-weight:600;${statusStyle}">${status}</td></tr>`;
+  }).join('')||'<tr><td colspan="5" style="color:var(--text3);font-style:italic;padding:16px">No keywords found. Try unchecking "Exclude stop words".</td></tr>';
+}
+
+function renderNgramTable(type,ngrams,total){
+  const maxCount=ngrams[0]?.[1]||1;
+  document.getElementById(type+'-body').innerHTML=ngrams.map(([w,c])=>{
+    const pct=(c/total*100);
+    const barPct=c/maxCount*100;
+    let barClass='density-low';
+    if(pct>3)barClass='density-over';
+    else if(pct>1.5)barClass='density-high';
+    else if(pct>=0.5)barClass='density-ok';
+    return`<tr><td class="kw-word">${w}</td><td class="kw-count">${c}</td><td class="density-pct">${pct.toFixed(2)}%</td><td><div class="density-bar-wrap"><div class="density-bar ${barClass}" style="width:${barPct}%"></div></div></td></tr>`;
+  }).join('')||'<tr><td colspan="4" style="color:var(--text3);font-style:italic;padding:16px">No repeated phrases found. Add more content for phrase analysis.</td></tr>';
+}
+
+function renderReadability(text,words,sentences){
+  // Flesch Reading Ease approximation
+  const syllables=text.toLowerCase().replace(/[^a-z]/g,' ').split(/\s+/).reduce((acc,w)=>{
+    if(!w)return acc;
+    let s=w.replace(/[^aeiouy]/g,'').replace(/e$/,'').length||1;
+    return acc+Math.max(1,s);
+  },0);
+  const fre=Math.min(100,Math.max(0,206.835-(1.015*(words/Math.max(sentences,1)))-(84.6*(syllables/Math.max(words,1))))).toFixed(0);
+  const freLabel=fre>70?'Easy to read':fre>50?'Fairly readable':fre>30?'Difficult':fre>10?'Very difficult':'Expert level';
+  const avgWordLen=(text.replace(/[^a-z]/gi,'').length/Math.max(words,1)).toFixed(1);
+  const longSentences=text.split(/[.!?]+/).filter(s=>s.trim().split(/\s+/).length>25).length;
+  const paragraphs=text.split(/\n\n+/).filter(p=>p.trim()).length;
+
+  document.getElementById('readability-panel').innerHTML=`
+    <div class="read-card"><div class="read-n" style="color:${fre>70?'#4ADE80':fre>40?'var(--amber)':'#F87171'}">${fre}</div><div class="read-l">Flesch Score</div><div style="font-size:11px;color:var(--blue3);margin-top:4px">${freLabel}</div></div>
+    <div class="read-card"><div class="read-n">${avgWordLen}</div><div class="read-l">Avg Word Length</div><div style="font-size:11px;color:var(--text3);margin-top:4px">${parseFloat(avgWordLen)>6?'Complex vocabulary':'Good readability'}</div></div>
+    <div class="read-card"><div class="read-n" style="color:${longSentences===0?'#4ADE80':longSentences<3?'var(--amber)':'#F87171'}">${longSentences}</div><div class="read-l">Long Sentences (25+ words)</div><div style="font-size:11px;color:var(--text3);margin-top:4px">${longSentences===0?'All good':'Consider breaking these up'}</div></div>
+    <div class="read-card"><div class="read-n">${paragraphs||1}</div><div class="read-l">Paragraphs</div><div style="font-size:11px;color:var(--text3);margin-top:4px">${paragraphs<3?'Consider more breaks':'Good structure'}</div></div>`;
+}
+</script>
+<script src="/js/includes.js" defer></script>
+</body>
+</html>

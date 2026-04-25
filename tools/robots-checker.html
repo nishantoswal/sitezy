@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Robots.txt Tester — Check Which Pages Bots Can Crawl — Sitezy</title>
+<meta name="description" content="Paste your robots.txt and test any URL to see if Googlebot, Bingbot, or any crawler is allowed or blocked. Free, instant, browser-based.">
+<link rel="canonical" href="https://sitezy.co/tools/robots-checker">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F71FF'/%3E%3Cpath d='M19.5 4.5L11 15.5h6.5L14.5 27.5l10-13H18l1.5-10z' fill='white' opacity='.95'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+.tool-hero{background:var(--navy);padding:56px 20px 48px;border-bottom:1px solid var(--border)}
+@media(min-width:768px){.tool-hero{padding:72px 56px 64px}}
+.tool-hero-inner{max-width:960px;margin:0 auto}
+.tool-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--white);letter-spacing:-1.5px;line-height:1.1;margin-top:14px}
+.tool-hero h1 span{color:var(--blue3)}
+.tool-hero-sub{font-size:17px;color:var(--text2);font-weight:300;line-height:1.75;margin-top:12px}
+.tool-body{background:var(--navy2);padding:48px 20px 80px}
+@media(min-width:768px){.tool-body{padding:56px 56px 100px}}
+.tool-inner{max-width:960px;margin:0 auto}
+.layout{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:840px){.layout{grid-template-columns:1.4fr 1fr}}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:28px 24px}
+.panel-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.panel-title svg{stroke:var(--blue3)}
+.xml-input{width:100%;padding:14px;background:var(--navy);border:1px solid var(--border);border-radius:var(--r-md);font-family:'Courier New',monospace;font-size:13px;color:#A5B4FC;line-height:1.65;resize:vertical;min-height:200px;outline:none;transition:border-color .2s}
+.xml-input:focus{border-color:var(--blue)}
+.tfield{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.tfield label{font-size:13.5px;font-weight:600;color:var(--text2)}
+.tfield input,.tfield select{width:100%;padding:12px 14px;background:var(--navy);border:1px solid var(--border);border-radius:var(--r-md);font-family:'DM Sans',sans-serif;font-size:15px;color:var(--white);outline:none;transition:border-color .2s}
+.tfield input:focus,.tfield select:focus{border-color:var(--blue)}
+.tfield select option{background:var(--navy)}
+.btn-check{width:100%;padding:14px;background:var(--blue);color:#fff;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .22s;margin-top:4px}
+.btn-check:hover{background:var(--blue2)}
+.result-box{padding:24px;border-radius:var(--r-lg);margin-bottom:16px;display:none}
+.result-box.show{display:block}
+.result-allowed{background:rgba(74,222,128,.08);border:2px solid rgba(74,222,128,.3)}
+.result-blocked{background:rgba(248,113,113,.08);border:2px solid rgba(248,113,113,.3)}
+.result-icon{font-size:48px;margin-bottom:12px}
+.result-status{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
+.result-ok{color:#4ADE80}
+.result-bad{color:#F87171}
+.result-detail{font-size:15px;color:var(--text2);line-height:1.7}
+.matching-rule{background:var(--navy);padding:12px 14px;border-radius:var(--r-md);font-family:monospace;font-size:13px;color:#A5B4FC;margin-top:12px;border:1px solid var(--border)}
+.parse-results{margin-top:20px}
+.agent-block{background:var(--navy);border:1px solid var(--border);border-radius:var(--r-md);padding:14px;margin-bottom:10px}
+.agent-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:var(--blue3);margin-bottom:8px}
+.rule-line{font-size:13px;font-family:monospace;padding:4px 0;display:flex;gap:8px;align-items:center}
+.rule-allow{color:#4ADE80}
+.rule-disallow{color:#F87171}
+.sitemap-found{font-size:14px;color:var(--text2);padding:10px 14px;background:rgba(79,113,255,.08);border-radius:var(--r-md);border:1px solid var(--border2);margin-top:10px}
+.btn-sample{width:100%;padding:10px;background:transparent;color:var(--text3);border:1px solid var(--border);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;margin-top:8px;transition:all .2s}
+.btn-sample:hover{border-color:var(--border2);color:var(--white)}
+.tool-cta-strip{background:var(--navy3);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 28px;margin-top:28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.tool-cta-strip p{font-size:15px;color:var(--text2);margin:0;flex:1}
+.tool-cta-strip strong{color:var(--white)}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="tool-hero">
+  <div class="tool-hero-inner">
+    <div class="breadcrumb" style="justify-content:flex-start"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/tools/">SEO Tools</a><span class="breadcrumb-sep">›</span><span>Robots.txt Tester</span></div>
+    <h1>Robots.txt<br><span>Tester</span></h1>
+    <p class="tool-hero-sub">Paste your robots.txt, enter a URL path, and instantly see if any crawler is allowed or blocked — and which specific rule is being applied.</p>
+  </div>
+</div>
+
+<div class="tool-body">
+  <div class="tool-inner">
+    <div class="layout">
+      <div>
+        <div class="panel">
+          <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Paste your robots.txt</div>
+          <textarea class="xml-input" id="robots-input" placeholder="Paste your robots.txt content here...
+
+Example:
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://example.com/sitemap.xml"></textarea>
+          <button class="btn-sample" onclick="loadSample()">Load sample robots.txt</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Test a URL</div>
+
+          <div class="tfield">
+            <label>URL Path to Test</label>
+            <input type="text" id="test-url" placeholder="/admin/users or /blog/post-1" value="/">
+          </div>
+
+          <div class="tfield">
+            <label>Select Crawler / Bot</label>
+            <select id="bot-select">
+              <option value="Googlebot">Googlebot (Google)</option>
+              <option value="Bingbot">Bingbot (Microsoft)</option>
+              <option value="*">* (All bots)</option>
+              <option value="Twitterbot">Twitterbot</option>
+              <option value="facebookexternalhit">Facebook Bot</option>
+              <option value="AhrefsBot">AhrefsBot</option>
+              <option value="SemrushBot">SemrushBot</option>
+            </select>
+          </div>
+
+          <button class="btn-check" onclick="testRobots()">Test This URL</button>
+
+          <div class="result-box" id="result-box">
+            <div class="result-icon" id="result-icon"></div>
+            <div class="result-status" id="result-status"></div>
+            <div class="result-detail" id="result-detail"></div>
+            <div class="matching-rule" id="matching-rule" style="display:none"></div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:20px">
+          <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Parsed Rules</div>
+          <div class="parse-results" id="parse-results">
+            <div style="font-size:14px;color:var(--text3);font-style:italic">Paste your robots.txt and click "Test This URL" to see parsed rules.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-cta-strip">
+      <p><strong>Robots.txt sorted for you.</strong> Every Sitezy site ships with a correctly configured robots.txt — allowing Google to crawl everything it should and nothing it shouldn't.</p>
+      <a href="/contact.html" class="btn btn-blue">Get My Free Preview →</a>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script>
+const SAMPLE=`User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+Sitemap: https://example.com/sitemap.xml`;
+
+function loadSample(){document.getElementById('robots-input').value=SAMPLE}
+
+function parseRobots(text){
+  const lines=text.split('\n').map(l=>l.trim()).filter(l=>l&&!l.startsWith('#'));
+  const groups=[];let current=null;const sitemaps=[];
+  for(const line of lines){
+    const lower=line.toLowerCase();
+    if(lower.startsWith('user-agent:')){
+      const agent=line.split(':').slice(1).join(':').trim();
+      if(!current||current.rules.length>0){current={agents:[agent],rules:[]};groups.push(current);}
+      else current.agents.push(agent);
+    } else if(lower.startsWith('allow:')){
+      if(!current)current={agents:['*'],rules:[]},groups.push(current);
+      current.rules.push({type:'allow',path:line.split(':').slice(1).join(':').trim()});
+    } else if(lower.startsWith('disallow:')){
+      if(!current)current={agents:['*'],rules:[]},groups.push(current);
+      const path=line.split(':').slice(1).join(':').trim();
+      current.rules.push({type:'disallow',path});
+    } else if(lower.startsWith('sitemap:')){
+      sitemaps.push(line.split(':').slice(1).join(':').trim());
+    }
+  }
+  return{groups,sitemaps};
+}
+
+function matchesPath(rulePath,testPath){
+  if(!rulePath||rulePath==='/')return testPath==='/';
+  if(rulePath==='')return false;
+  if(rulePath.endsWith('$'))return testPath===rulePath.slice(0,-1);
+  if(rulePath.includes('*')){
+    const regex=new RegExp('^'+rulePath.replace(/\*/g,'.*').replace(/\$/g,'$'));
+    return regex.test(testPath);
+  }
+  return testPath.startsWith(rulePath);
+}
+
+function testRobots(){
+  const robotsTxt=document.getElementById('robots-input').value.trim();
+  const testPath=document.getElementById('test-url').value.trim()||'/';
+  const bot=document.getElementById('bot-select').value;
+  if(!robotsTxt){alert('Please paste your robots.txt first.');return;}
+
+  const{groups,sitemaps}=parseRobots(robotsTxt);
+  let allowed=true,matchingRule=null,matchingGroup=null;
+
+  // Find applicable groups: bot-specific first, then wildcard
+  const applicable=groups.filter(g=>g.agents.some(a=>a.toLowerCase()===bot.toLowerCase())||g.agents.includes('*'));
+  const specific=groups.filter(g=>g.agents.some(a=>a.toLowerCase()===bot.toLowerCase()));
+  const wildcard=groups.filter(g=>g.agents.includes('*'));
+
+  const toCheck=specific.length>0?specific:wildcard;
+
+  for(const group of toCheck){
+    for(const rule of group.rules){
+      if(rule.path===''&&rule.type==='disallow') continue;
+      if(matchesPath(rule.path,testPath)){
+        if(rule.type==='disallow'){allowed=false;matchingRule=rule;matchingGroup=group;break;}
+        if(rule.type==='allow'){allowed=true;matchingRule=rule;matchingGroup=group;break;}
+      }
+    }
+    if(matchingRule)break;
+  }
+
+  const box=document.getElementById('result-box');
+  const icon=document.getElementById('result-icon');
+  const status=document.getElementById('result-status');
+  const detail=document.getElementById('result-detail');
+  const ruleEl=document.getElementById('matching-rule');
+
+  if(allowed){
+    box.className='result-box show result-allowed';
+    icon.textContent='✅';
+    status.textContent='Allowed';
+    status.className='result-status result-ok';
+    detail.textContent=`${bot} is allowed to crawl "${testPath}". This page can be discovered and indexed by this crawler.`;
+  } else {
+    box.className='result-box show result-blocked';
+    icon.textContent='🚫';
+    status.textContent='Blocked';
+    status.className='result-status result-bad';
+    detail.textContent=`${bot} is blocked from crawling "${testPath}". Google cannot index this page unless you update your robots.txt.`;
+  }
+
+  if(matchingRule){
+    ruleEl.style.display='block';
+    ruleEl.textContent=`Matching rule: ${matchingRule.type==='allow'?'Allow':'Disallow'}: ${matchingRule.path}\n(from User-agent: ${matchingGroup.agents.join(', ')})`;
+  } else {
+    ruleEl.style.display='block';
+    ruleEl.textContent='No specific rule matched — defaulting to allowed.';
+  }
+
+  // Render parsed rules
+  let html=groups.map(g=>`
+    <div class="agent-block">
+      <div class="agent-name">User-agent: ${g.agents.join(', ')}</div>
+      ${g.rules.map(r=>`<div class="rule-line"><span class="${r.type==='allow'?'rule-allow':'rule-disallow'}">${r.type==='allow'?'Allow':'Disallow'}:</span> ${r.path||'(empty)'}</div>`).join('')}
+    </div>`).join('');
+  if(sitemaps.length>0) html+=sitemaps.map(s=>`<div class="sitemap-found">📍 Sitemap: ${s}</div>`).join('');
+  document.getElementById('parse-results').innerHTML=html||'<div style="color:var(--text3);font-size:14px">No rules found — this robots.txt appears to be empty.</div>';
+}
+</script>
+<script src="/js/includes.js" defer></script>
+</body>
+</html>

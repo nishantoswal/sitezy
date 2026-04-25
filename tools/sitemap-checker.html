@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Sitemap XML Checker & Validator — Sitezy SEO Tools</title>
+<meta name="description" content="Paste your XML sitemap and instantly validate its structure. Checks URL format, required elements, duplicate URLs, and common errors that stop Google from indexing your site.">
+<link rel="canonical" href="https://sitezy.co/tools/sitemap-checker">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F71FF'/%3E%3Cpath d='M19.5 4.5L11 15.5h6.5L14.5 27.5l10-13H18l1.5-10z' fill='white' opacity='.95'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+.tool-hero{background:var(--navy);padding:56px 20px 48px;border-bottom:1px solid var(--border)}
+@media(min-width:768px){.tool-hero{padding:72px 56px 64px}}
+.tool-hero-inner{max-width:960px;margin:0 auto}
+.tool-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--white);letter-spacing:-1.5px;line-height:1.1;margin-top:14px}
+.tool-hero h1 span{color:var(--blue3)}
+.tool-hero-sub{font-size:17px;color:var(--text2);font-weight:300;line-height:1.75;margin-top:12px}
+.tool-body{background:var(--navy2);padding:48px 20px 80px}
+@media(min-width:768px){.tool-body{padding:56px 56px 100px}}
+.tool-inner{max-width:960px;margin:0 auto}
+.input-panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:28px 24px;margin-bottom:20px}
+.panel-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.panel-title svg{stroke:var(--blue3)}
+.xml-input{width:100%;padding:16px;background:var(--navy);border:1px solid var(--border);border-radius:var(--r-md);font-family:'Courier New',monospace;font-size:13px;color:#A5B4FC;line-height:1.65;resize:vertical;min-height:240px;outline:none;transition:border-color .2s}
+.xml-input:focus{border-color:var(--blue)}
+.btn-row{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+.btn-check{padding:12px 28px;background:var(--blue);color:#fff;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .22s}
+.btn-check:hover{background:var(--blue2);transform:translateY(-1px)}
+.btn-sample{padding:12px 20px;background:var(--card);color:var(--text2);border:1.5px solid var(--border);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s}
+.btn-sample:hover{border-color:var(--border2);color:var(--white)}
+.btn-clear{padding:12px 20px;background:transparent;color:var(--text3);border:none;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer}
+.results-panel{display:none}
+.results-panel.show{display:block}
+.summary-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+@media(min-width:580px){.summary-row{grid-template-columns:repeat(4,1fr)}}
+.sum-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:18px 16px;text-align:center}
+.sum-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;letter-spacing:-1px;line-height:1}
+.sum-l{font-size:12px;color:var(--text3);margin-top:6px;font-weight:500}
+.issues-list{display:flex;flex-direction:column;gap:10px}
+.issue-item{display:flex;gap:14px;padding:16px 18px;border-radius:var(--r-md);border:1px solid;align-items:flex-start}
+.issue-err{background:rgba(248,113,113,.07);border-color:rgba(248,113,113,.25)}
+.issue-warn{background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.25)}
+.issue-ok{background:rgba(74,222,128,.07);border-color:rgba(74,222,128,.25)}
+.issue-ic{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.ic-err{background:rgba(248,113,113,.2);color:#F87171}
+.ic-warn{background:rgba(251,191,36,.2);color:var(--amber)}
+.ic-ok{background:rgba(74,222,128,.2);color:#4ADE80}
+.issue-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:3px}
+.issue-desc{font-size:14px;color:var(--text2);line-height:1.65}
+.urls-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+.urls-table th{text-align:left;padding:10px 14px;background:var(--navy3);color:var(--text3);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.urls-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text2);background:var(--card)}
+.urls-table td:first-child{color:var(--white);font-family:monospace;font-size:12px;word-break:break-all}
+.urls-table tr:hover td{background:rgba(255,255,255,.02)}
+.url-ok{color:#4ADE80;font-size:11px;font-weight:700}
+.url-warn{color:var(--amber);font-size:11px;font-weight:700}
+.url-err{color:#F87171;font-size:11px;font-weight:700}
+.tool-cta-strip{background:var(--navy3);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 28px;margin-top:28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.tool-cta-strip p{font-size:15px;color:var(--text2);margin:0;flex:1}
+.tool-cta-strip strong{color:var(--white)}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="tool-hero">
+  <div class="tool-hero-inner">
+    <div class="breadcrumb" style="justify-content:flex-start"><a href="/">Home</a><span class="breadcrumb-sep">›</span><a href="/tools/">SEO Tools</a><span class="breadcrumb-sep">›</span><span>Sitemap Checker</span></div>
+    <h1>Sitemap XML<br><span>Checker &amp; Validator</span></h1>
+    <p class="tool-hero-sub">Paste your sitemap XML below to validate its structure, check URL formats, detect duplicates, and find issues that could prevent Google from indexing your pages.</p>
+  </div>
+</div>
+
+<div class="tool-body">
+  <div class="tool-inner">
+    <div class="input-panel">
+      <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Paste your sitemap XML</div>
+      <textarea class="xml-input" id="xml-input" placeholder="Paste your sitemap.xml content here...
+
+Example:
+<?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+<urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;>
+  <url>
+    <loc>https://example.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>"></textarea>
+      <div class="btn-row">
+        <button class="btn-check" onclick="checkSitemap()">Validate Sitemap</button>
+        <button class="btn-sample" onclick="loadSample()">Load Sample</button>
+        <button class="btn-clear" onclick="clearAll()">Clear</button>
+      </div>
+    </div>
+
+    <div class="results-panel" id="results">
+      <div class="summary-row" id="summary-row"></div>
+      <div class="input-panel">
+        <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Validation Results</div>
+        <div class="issues-list" id="issues-list"></div>
+      </div>
+      <div class="input-panel" id="urls-panel" style="margin-top:20px">
+        <div class="panel-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>URLs Found</div>
+        <div style="overflow-x:auto"><table class="urls-table" id="urls-table"><thead><tr><th>URL</th><th>Priority</th><th>Changefreq</th><th>Status</th></tr></thead><tbody id="urls-body"></tbody></table></div>
+      </div>
+    </div>
+
+    <div class="tool-cta-strip">
+      <p><strong>Already have a Sitezy site?</strong> We submit your sitemap to Google Search Console and handle all indexing setup — so your pages get found as fast as possible.</p>
+      <a href="/contact.html" class="btn btn-blue">Get My Free Preview →</a>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script>
+const SAMPLE=`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://example.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://example.com/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://example.com/contact</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>`;
+
+function loadSample(){document.getElementById('xml-input').value=SAMPLE}
+function clearAll(){document.getElementById('xml-input').value='';document.getElementById('results').classList.remove('show')}
+
+function checkSitemap(){
+  const raw=document.getElementById('xml-input').value.trim();
+  if(!raw){alert('Please paste your sitemap XML first.');return;}
+
+  const issues=[];
+  let urlCount=0,errCount=0,warnCount=0;
+  const urls=[];
+
+  // Parse XML
+  let doc;
+  try{
+    const parser=new DOMParser();
+    doc=parser.parseFromString(raw,'text/xml');
+    const parseErr=doc.querySelector('parsererror');
+    if(parseErr){
+      issues.push({type:'err',title:'XML Parse Error',desc:'Your XML is not valid. Check for unclosed tags, missing quotes, or invalid characters. Common cause: using & instead of &amp; in URLs.'});
+      errCount++;showResults(issues,urls,urlCount,errCount,warnCount);return;
+    }
+  }catch(e){issues.push({type:'err',title:'Could not parse XML',desc:e.message});errCount++;showResults(issues,urls,urlCount,errCount,warnCount);return;}
+
+  // Check declaration
+  if(!raw.includes('<?xml')) issues.push({type:'warn',title:'Missing XML declaration',desc:'Add <?xml version="1.0" encoding="UTF-8"?> at the very top of your sitemap.'});
+
+  // Check root element
+  const root=doc.documentElement;
+  if(root.tagName==='urlset'){
+    const ns=root.getAttribute('xmlns');
+    if(!ns||!ns.includes('sitemaps.org')) issues.push({type:'warn',title:'Missing or incorrect namespace',desc:'Your <urlset> should include xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'});
+    else issues.push({type:'ok',title:'Valid urlset namespace',desc:'Your sitemap uses the correct XML namespace for Google.'});
+  } else if(root.tagName==='sitemapindex'){
+    issues.push({type:'ok',title:'Sitemap index detected',desc:'This is a sitemap index file — it references multiple sitemaps. This is valid for large sites.'});
+  } else {
+    issues.push({type:'err',title:'Invalid root element',desc:`Expected <urlset> or <sitemapindex> but found <${root.tagName}>. Your sitemap root element is incorrect.`});
+    errCount++;
+  }
+
+  // Parse URLs
+  const urlEls=doc.querySelectorAll('url');
+  urlCount=urlEls.length;
+
+  if(urlCount===0){
+    issues.push({type:'err',title:'No URLs found',desc:'Your sitemap contains no <url> elements. Make sure you have at least one URL listed.'});
+    errCount++;
+  } else if(urlCount>50000){
+    issues.push({type:'err',title:'Too many URLs',desc:`Sitemaps are limited to 50,000 URLs. You have ${urlCount.toLocaleString()}. Split into multiple sitemaps and use a sitemap index.`});
+    errCount++;
+  } else if(urlCount>10000){
+    issues.push({type:'warn',title:`Large sitemap (${urlCount.toLocaleString()} URLs)`,desc:'Consider splitting into multiple sitemaps for better crawl management. Google recommends keeping sitemaps under 10,000 URLs.'});
+    warnCount++;
+  } else {
+    issues.push({type:'ok',title:`${urlCount} URL${urlCount===1?'':'s'} found`,desc:'Your sitemap URL count is within the recommended limit.'});
+  }
+
+  // Check individual URLs
+  const seenUrls=new Set();
+  let hasHttps=0,hasHttp=0,hasDupes=0,missingLoc=0;
+
+  urlEls.forEach(url=>{
+    const loc=url.querySelector('loc');
+    const prio=url.querySelector('priority');
+    const freq=url.querySelector('changefreq');
+    const locText=loc?loc.textContent.trim():'';
+    const prioText=prio?prio.textContent.trim():'—';
+    const freqText=freq?freq.textContent.trim():'—';
+    let status='ok';let statusLabel='✓ OK';
+
+    if(!locText){missingLoc++;status='err';statusLabel='✗ Missing'}
+    else{
+      if(seenUrls.has(locText)){hasDupes++;status='warn';statusLabel='⚠ Duplicate'}
+      seenUrls.add(locText);
+      if(locText.startsWith('https://'))hasHttps++;
+      else if(locText.startsWith('http://')){hasHttp++;status='warn';statusLabel='⚠ HTTP'}
+      if(prio&&(parseFloat(prioText)<0||parseFloat(prioText)>1)){status='warn';statusLabel='⚠ Bad priority'}
+    }
+    urls.push({loc:locText||'(missing)',prio:prioText,freq:freqText,status,statusLabel});
+  });
+
+  if(missingLoc>0){issues.push({type:'err',title:`${missingLoc} URL${missingLoc>1?'s are':' is'} missing <loc>`,desc:'Every <url> element must contain a <loc> element with the full URL. These entries will be ignored by Google.'});errCount++;}
+  if(hasDupes>0){issues.push({type:'warn',title:`${hasDupes} duplicate URL${hasDupes>1?'s':''} found`,desc:'Duplicate URLs waste crawl budget. Remove duplicates and ensure each URL appears only once in your sitemap.'});warnCount++;}
+  if(hasHttp>0&&hasHttps>0){issues.push({type:'warn',title:'Mixed HTTP and HTTPS URLs',desc:'Your sitemap contains both HTTP and HTTPS URLs. Standardise on HTTPS — Google treats them as different pages.'});warnCount++;}
+  if(hasHttp>0&&hasHttps===0){issues.push({type:'warn',title:'All URLs use HTTP',desc:'Your URLs use HTTP, not HTTPS. Google strongly prefers HTTPS. Consider migrating and updating your sitemap.'});warnCount++;}
+  if(hasHttps>0&&hasDupes===0&&missingLoc===0){issues.push({type:'ok',title:'All URLs use HTTPS',desc:'Great — all your URLs use secure HTTPS connections.'});}
+
+  // Byte size
+  const bytes=new Blob([raw]).size;
+  if(bytes>52428800){issues.push({type:'err',title:'Sitemap file too large',desc:`Your sitemap is ${(bytes/1048576).toFixed(1)}MB. Sitemaps must be under 50MB (uncompressed). Split into multiple files.`});errCount++;}
+
+  showResults(issues,urls,urlCount,errCount,warnCount);
+}
+
+function showResults(issues,urls,urlCount,errCount,warnCount){
+  const okCount=issues.filter(i=>i.type==='ok').length;
+  document.getElementById('summary-row').innerHTML=`
+    <div class="sum-card"><div class="sum-n" style="color:var(--white)">${urlCount}</div><div class="sum-l">URLs Found</div></div>
+    <div class="sum-card"><div class="sum-n" style="color:#4ADE80">${okCount}</div><div class="sum-l">Checks Passed</div></div>
+    <div class="sum-card"><div class="sum-n" style="color:var(--amber)">${warnCount}</div><div class="sum-l">Warnings</div></div>
+    <div class="sum-card"><div class="sum-n" style="color:#F87171">${errCount}</div><div class="sum-l">Errors</div></div>`;
+
+  document.getElementById('issues-list').innerHTML=issues.map(i=>`
+    <div class="issue-item issue-${i.type}">
+      <div class="issue-ic ic-${i.type}">${i.type==='ok'?'✓':i.type==='warn'?'!':'✗'}</div>
+      <div><div class="issue-title">${i.title}</div><div class="issue-desc">${i.desc}</div></div>
+    </div>`).join('');
+
+  const tbody=document.getElementById('urls-body');
+  tbody.innerHTML=urls.slice(0,100).map(u=>`
+    <tr><td>${u.loc}</td><td>${u.prio}</td><td>${u.freq}</td>
+    <td class="url-${u.status==='ok'?'ok':u.status==='warn'?'warn':'err'}">${u.statusLabel}</td></tr>`).join('');
+  if(urls.length>100) tbody.innerHTML+=`<tr><td colspan="4" style="color:var(--text3);font-style:italic;padding:14px">...and ${urls.length-100} more URLs (showing first 100)</td></tr>`;
+
+  document.getElementById('results').classList.add('show');
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+<script src="/js/includes.js" defer></script>
+</body>
+</html>
