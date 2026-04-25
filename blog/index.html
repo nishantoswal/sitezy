@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Web Design, SEO & Business Growth Tips — Sitezy</title>
+<meta name="description" content="Practical advice on websites, SEO, and online growth for small businesses. No jargon, no fluff — just what actually works.">
+<link rel="canonical" href="https://sitezy.co/blog">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sitezy.co/blog">
+<meta property="og:title" content="Blog — Web Design, SEO & Business Growth — Sitezy">
+<meta property="og:description" content="Practical advice on websites, SEO, and online growth for small businesses. No jargon, no fluff — just what actually works.">
+<meta property="og:site_name" content="Sitezy">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F71FF'/%3E%3Cpath d='M19.5 4.5L11 15.5h6.5L14.5 27.5l10-13H18l1.5-10z' fill='white' opacity='.95'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+<link rel="stylesheet" href="/css/global.css">
+<style>
+/* ── Hero ── */
+.blog-hero{
+  background:var(--navy);
+  padding:64px 20px 72px;
+  position:relative;overflow:hidden;
+  text-align:center;
+}
+@media(min-width:768px){.blog-hero{padding:80px 56px 88px}}
+.blog-hero::before{
+  content:'';position:absolute;top:-180px;left:50%;
+  transform:translateX(-50%);width:800px;height:600px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(79,113,255,.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.blog-hero h1{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(32px,5vw,56px);font-weight:800;
+  color:var(--white);letter-spacing:-2px;line-height:1.07;
+  margin-top:14px;position:relative;z-index:1;
+}
+.blog-hero h1 span{color:var(--blue3)}
+.blog-hero-sub{
+  font-size:clamp(17px,2vw,19px);color:var(--text2);
+  font-weight:300;line-height:1.8;
+  margin:16px auto 0;max-width:540px;
+  position:relative;z-index:1;
+}
+
+/* ── Filter Tabs ── */
+.blog-filters{
+  display:flex;gap:6px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:32px;
+  position:relative;z-index:1;
+}
+.bf-btn{
+  padding:8px 18px;border-radius:100px;
+  font-size:13px;font-weight:600;
+  border:1px solid var(--border);color:var(--text2);
+  cursor:pointer;background:transparent;
+  transition:all .22s;white-space:nowrap;
+  font-family:'DM Sans',sans-serif;
+}
+.bf-btn:hover{border-color:var(--border2);color:var(--white)}
+.bf-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* ── Blog Body ── */
+.blog-body{background:var(--navy2);padding:56px 20px 96px}
+@media(min-width:768px){.blog-body{padding:72px 56px 100px}}
+.blog-inner{max-width:1100px;margin:0 auto}
+
+/* ── Featured Post ── */
+.featured-post{
+  display:grid;grid-template-columns:1fr;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r-xl);overflow:hidden;
+  transition:all .3s;text-decoration:none;
+  margin-bottom:24px;
+}
+@media(min-width:768px){.featured-post{grid-template-columns:1.1fr 1fr}}
+.featured-post:hover{border-color:var(--border2);box-shadow:var(--sh-lg);transform:translateY(-3px)}
+.featured-thumb{
+  background:linear-gradient(135deg,#0A0F2E 0%,#0E1842 40%,#162260 100%);
+  min-height:260px;position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:28px;
+}
+@media(min-width:768px){.featured-thumb{min-height:340px}}
+.featured-thumb::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%,rgba(79,113,255,.25) 0%,transparent 65%);
+}
+.ft-graphic{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  opacity:.15;font-size:160px;
+}
+.featured-tag{
+  position:relative;z-index:1;
+  display:inline-block;padding:5px 14px;border-radius:100px;
+  background:var(--blue);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.featured-body{padding:36px 32px;display:flex;flex-direction:column;justify-content:center}
+.featured-meta{
+  display:flex;align-items:center;gap:10px;
+  font-size:12.5px;color:var(--text3);margin-bottom:14px;
+}
+.featured-label{
+  font-size:11px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue3);margin-bottom:10px;
+}
+.featured-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(20px,2.5vw,28px);font-weight:800;
+  color:var(--white);letter-spacing:-.5px;line-height:1.2;
+  margin-bottom:14px;transition:color .2s;
+}
+.featured-post:hover .featured-title{color:var(--blue3)}
+.featured-excerpt{
+  font-size:16px;color:var(--text2);
+  line-height:1.8;font-weight:300;margin-bottom:24px;flex:1;
+}
+.read-more{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:700;color:var(--blue3);
+  transition:gap .2s;
+}
+.featured-post:hover .read-more,
+.post-card:hover .read-more{gap:12px}
+
+/* ── Post Grid ── */
+.posts-grid{
+  display:grid;grid-template-columns:1fr;gap:20px;
+}
+@media(min-width:580px){.posts-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
+
+.post-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r-xl);overflow:hidden;
+  transition:all .3s;text-decoration:none;
+  display:flex;flex-direction:column;
+}
+.post-card:hover{border-color:var(--border2);box-shadow:var(--sh-lg);transform:translateY(-4px)}
+
+.post-thumb{
+  height:180px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.post-thumb-emoji{
+  font-size:80px;opacity:.2;
+  position:absolute;right:-10px;bottom:-10px;
+  line-height:1;
+}
+.post-thumb-tag{
+  position:absolute;top:14px;left:14px;
+  padding:4px 12px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.post-thumb-label{
+  position:relative;z-index:1;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(15px,2vw,18px);font-weight:800;
+  color:rgba(255,255,255,.9);text-align:center;
+  padding:0 20px;line-height:1.3;letter-spacing:-.2px;
+}
+
+.post-body{padding:24px 24px 28px;flex:1;display:flex;flex-direction:column}
+.post-meta-row{
+  display:flex;align-items:center;gap:10px;
+  font-size:12px;color:var(--text3);margin-bottom:10px;
+}
+.post-cat-badge{
+  font-size:11px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--blue3);
+}
+.post-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(16px,1.8vw,19px);font-weight:700;
+  color:var(--white);line-height:1.3;
+  margin-bottom:10px;transition:color .2s;letter-spacing:-.2px;
+}
+.post-card:hover .post-title{color:var(--blue3)}
+.post-excerpt{
+  font-size:14px;color:var(--text2);
+  line-height:1.75;font-weight:300;flex:1;margin-bottom:18px;
+}
+
+/* ── Divider label ── */
+.section-divider{
+  display:flex;align-items:center;gap:16px;
+  margin:36px 0 20px;
+}
+.sd-line{flex:1;height:1px;background:var(--border)}
+.sd-label{
+  font-size:12px;font-weight:700;color:var(--text3);
+  letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+}
+
+/* ── Sidebar CTA ── */
+.blog-cta-box{
+  background:linear-gradient(135deg,var(--navy3) 0%,#131840 60%,var(--navy4) 100%);
+  border:1px solid var(--border2);border-radius:var(--r-xl);
+  padding:32px 28px;text-align:center;margin-top:24px;
+}
+.blog-cta-box h3{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:20px;font-weight:800;color:var(--white);
+  letter-spacing:-.3px;margin-bottom:10px;
+}
+.blog-cta-box p{
+  font-size:14.5px;color:var(--text2);line-height:1.7;
+  font-weight:300;margin-bottom:22px;
+}
+
+/* ── All posts layout with sidebar ── */
+.blog-layout{
+  display:grid;grid-template-columns:1fr;gap:24px;
+}
+@media(min-width:1024px){.blog-layout{grid-template-columns:1fr 300px}}
+
+.sidebar{display:flex;flex-direction:column;gap:16px}
+
+/* Sidebar cards */
+.sidebar-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:22px 20px;
+}
+.sidebar-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px;font-weight:700;color:var(--white);
+  margin-bottom:16px;
+  display:flex;align-items:center;gap:8px;
+}
+.sidebar-title svg{stroke:var(--blue3)}
+.sidebar-post{
+  display:flex;flex-direction:column;gap:4px;
+  padding:10px 0;border-bottom:1px solid var(--border);
+  text-decoration:none;transition:all .2s;
+}
+.sidebar-post:last-child{border-bottom:none;padding-bottom:0}
+.sidebar-post:hover .sp-title{color:var(--blue3)}
+.sp-cat{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3)}
+.sp-title{font-size:14px;font-weight:600;color:var(--white);line-height:1.4;transition:color .2s}
+.sp-read{font-size:12px;color:var(--text3)}
+
+.tool-link{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 0;border-bottom:1px solid var(--border);
+  text-decoration:none;transition:all .2s;
+}
+.tool-link:last-child{border-bottom:none}
+.tool-link:hover .tl-name{color:var(--blue3)}
+.tl-ic{
+  width:32px;height:32px;border-radius:9px;
+  background:var(--blue-soft);border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.tl-ic svg{stroke:var(--blue3)}
+.tl-name{font-size:13.5px;font-weight:600;color:var(--white);transition:color .2s}
+.tl-desc{font-size:11.5px;color:var(--text3);margin-top:1px}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- ══ HERO ══ -->
+<div class="blog-hero">
+  <div class="breadcrumb" style="justify-content:center">
+    <a href="/">Home</a><span class="breadcrumb-sep">›</span><span>Blog</span>
+  </div>
+  <div class="sec-label" style="justify-content:center;margin-top:14px">The Sitezy Blog</div>
+  <h1>Websites, SEO &amp;<br><span>business growth</span></h1>
+  <p class="blog-hero-sub">Practical, no-nonsense advice for small business owners who want more customers from their website.</p>
+  <div class="blog-filters">
+    <button class="bf-btn active" onclick="filterPosts('all',this)">All Posts</button>
+    <button class="bf-btn" onclick="filterPosts('pricing',this)">Pricing &amp; Value</button>
+    <button class="bf-btn" onclick="filterPosts('seo',this)">SEO</button>
+    <button class="bf-btn" onclick="filterPosts('strategy',this)">Strategy</button>
+    <button class="bf-btn" onclick="filterPosts('process',this)">Process</button>
+  </div>
+</div>
+
+<!-- ══ BLOG BODY ══ -->
+<div class="blog-body">
+  <div class="blog-inner">
+
+    <!-- Featured post -->
+    <a href="/blog/how-much-does-a-website-cost-for-small-business.html"
+       class="featured-post reveal"
+       data-cat="pricing">
+      <div class="featured-thumb">
+        <div class="ft-graphic">💰</div>
+        <span class="featured-tag">Featured</span>
+      </div>
+      <div class="featured-body">
+        <div class="featured-label">Pricing &amp; Value</div>
+        <div class="featured-meta">
+          <span>January 2026</span>
+          <span>·</span>
+          <span>8 min read</span>
+        </div>
+        <div class="featured-title">How Much Does a Website Cost for a Small Business in 2026?</div>
+        <p class="featured-excerpt">The honest answer ranges from $39/month to $50,000+ depending on how you build it. A complete breakdown of every option — DIY builders, freelancers, agencies, and subscription services — so you can make an informed decision for your business.</p>
+        <div class="read-more">Read article <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+    </a>
+
+    <!-- Main + Sidebar layout -->
+    <div class="blog-layout">
+
+      <!-- Posts column -->
+      <div>
+        <div class="section-divider">
+          <div class="sd-line"></div>
+          <div class="sd-label">More Articles</div>
+          <div class="sd-line"></div>
+        </div>
+
+        <div class="posts-grid" id="posts-grid">
+
+          <!-- Post 2 -->
+          <a href="/blog/do-i-need-a-website-if-i-have-facebook.html"
+             class="post-card reveal"
+             data-cat="strategy">
+            <div class="post-thumb" style="background:linear-gradient(135deg,#1a0a30 0%,#2d1260 100%)">
+              <div class="post-thumb-emoji">📱</div>
+              <span class="post-thumb-tag" style="background:rgba(167,139,250,.2);color:#C4B5FD">Strategy</span>
+              <div class="post-thumb-label">Website vs Facebook Page</div>
+            </div>
+            <div class="post-body">
+              <div class="post-meta-row">
+                <span class="post-cat-badge">Strategy</span>
+                <span>·</span>
+                <span>March 2026</span>
+                <span>·</span>
+                <span>5 min</span>
+              </div>
+              <div class="post-title">Do I Need a Website If I Already Have a Facebook Page?</div>
+              <p class="post-excerpt">Running your business from a Facebook page feels convenient and free. But there are five critical things it can't do for you — and they're costing you customers every day.</p>
+              <div class="read-more">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+          <!-- Post 3 -->
+          <a href="/blog/how-long-does-it-take-to-build-a-business-website.html"
+             class="post-card reveal"
+             data-cat="process">
+            <div class="post-thumb" style="background:linear-gradient(135deg,#0a1a30 0%,#0e2545 100%)">
+              <div class="post-thumb-emoji">⏱️</div>
+              <span class="post-thumb-tag" style="background:rgba(56,189,248,.15);color:#7DD3FC">Process</span>
+              <div class="post-thumb-label">Build Time: The Real Timeline</div>
+            </div>
+            <div class="post-body">
+              <div class="post-meta-row">
+                <span class="post-cat-badge">Process</span>
+                <span>·</span>
+                <span>March 2026</span>
+                <span>·</span>
+                <span>5 min</span>
+              </div>
+              <div class="post-title">How Long Does It Take to Build a Business Website?</div>
+              <p class="post-excerpt">Anywhere from 48 hours to 6 months depending on who builds it. Here are the real timelines for every approach — and why most businesses wait far longer than they need to.</p>
+              <div class="read-more">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+          <!-- Post 4 -->
+          <a href="/blog/why-your-business-website-isnt-ranking-on-google.html"
+             class="post-card reveal"
+             data-cat="seo">
+            <div class="post-thumb" style="background:linear-gradient(135deg,#0a1a10 0%,#0d2718 100%)">
+              <div class="post-thumb-emoji">🔍</div>
+              <span class="post-thumb-tag" style="background:rgba(74,222,128,.15);color:#86EFAC">SEO</span>
+              <div class="post-thumb-label">Why You're Not Ranking on Google</div>
+            </div>
+            <div class="post-body">
+              <div class="post-meta-row">
+                <span class="post-cat-badge">SEO</span>
+                <span>·</span>
+                <span>April 2026</span>
+                <span>·</span>
+                <span>6 min</span>
+              </div>
+              <div class="post-title">Why Your Business Website Isn't Ranking on Google (And How to Fix It)</div>
+              <p class="post-excerpt">If your site doesn't show up when customers search, there are 6 fixable reasons. Here's what to check first and what makes the biggest impact fastest.</p>
+              <div class="read-more">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+          <!-- Post 5 -->
+          <a href="/blog/website-vs-social-media-which-does-your-business-need.html"
+             class="post-card reveal"
+             data-cat="strategy">
+            <div class="post-thumb" style="background:linear-gradient(135deg,#1a0a10 0%,#2d101a 100%)">
+              <div class="post-thumb-emoji">📊</div>
+              <span class="post-thumb-tag" style="background:rgba(251,113,133,.15);color:#FCA5A5">Strategy</span>
+              <div class="post-thumb-label">Website vs Social Media</div>
+            </div>
+            <div class="post-body">
+              <div class="post-meta-row">
+                <span class="post-cat-badge">Strategy</span>
+                <span>·</span>
+                <span>April 2026</span>
+                <span>·</span>
+                <span>5 min</span>
+              </div>
+              <div class="post-title">Website vs Social Media: Which Does Your Business Actually Need?</div>
+              <p class="post-excerpt">The debate misses the point. The better question is what each one actually does — and whether you can afford to go without either. Here's the honest answer.</p>
+              <div class="read-more">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            </div>
+          </a>
+
+        </div><!-- /posts-grid -->
+
+        <!-- Empty state (shown when filter has no results) -->
+        <div id="no-posts" style="display:none;text-align:center;padding:56px 20px;color:var(--text3)">
+          <div style="font-size:48px;margin-bottom:16px">📭</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px">No posts in this category yet</div>
+          <div style="font-size:15px">More articles are on the way. Check back soon.</div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+
+        <!-- All posts quick list -->
+        <div class="sidebar-card">
+          <div class="sidebar-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            All 5 Articles
+          </div>
+          <a href="/blog/how-much-does-a-website-cost-for-small-business.html" class="sidebar-post">
+            <div class="sp-cat">Pricing &amp; Value</div>
+            <div class="sp-title">How Much Does a Website Cost for a Small Business?</div>
+            <div class="sp-read">8 min read</div>
+          </a>
+          <a href="/blog/do-i-need-a-website-if-i-have-facebook.html" class="sidebar-post">
+            <div class="sp-cat">Strategy</div>
+            <div class="sp-title">Do I Need a Website If I Have Facebook?</div>
+            <div class="sp-read">5 min read</div>
+          </a>
+          <a href="/blog/how-long-does-it-take-to-build-a-business-website.html" class="sidebar-post">
+            <div class="sp-cat">Process</div>
+            <div class="sp-title">How Long Does It Take to Build a Business Website?</div>
+            <div class="sp-read">5 min read</div>
+          </a>
+          <a href="/blog/why-your-business-website-isnt-ranking-on-google.html" class="sidebar-post">
+            <div class="sp-cat">SEO</div>
+            <div class="sp-title">Why Your Website Isn't Ranking on Google</div>
+            <div class="sp-read">6 min read</div>
+          </a>
+          <a href="/blog/website-vs-social-media-which-does-your-business-need.html" class="sidebar-post">
+            <div class="sp-cat">Strategy</div>
+            <div class="sp-title">Website vs Social Media: Which Do You Need?</div>
+            <div class="sp-read">5 min read</div>
+          </a>
+        </div>
+
+        <!-- Free SEO Tools -->
+        <div class="sidebar-card">
+          <div class="sidebar-title">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Free SEO Tools
+          </div>
+          <a href="/tools/meta-tag-checker.html" class="tool-link">
+            <div class="tl-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
+            <div><div class="tl-name">Meta Tag Checker</div><div class="tl-desc">Preview your Google snippet</div></div>
+          </a>
+          <a href="/tools/sitemap-checker.html" class="tool-link">
+            <div class="tl-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div><div class="tl-name">Sitemap XML Checker</div><div class="tl-desc">Validate your sitemap file</div></div>
+          </a>
+          <a href="/tools/schema-validator.html" class="tool-link">
+            <div class="tl-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <div><div class="tl-name">Schema Validator</div><div class="tl-desc">Check your structured data</div></div>
+          </a>
+          <a href="/tools/og-preview.html" class="tool-link">
+            <div class="tl-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <div><div class="tl-name">Social Media Preview</div><div class="tl-desc">See your OG share card</div></div>
+          </a>
+          <a href="/tools/keyword-density.html" class="tool-link">
+            <div class="tl-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <div><div class="tl-name">Keyword Density</div><div class="tl-desc">Analyse your copy</div></div>
+          </a>
+          <a href="/tools/" class="tool-link" style="margin-top:4px">
+            <div class="tl-ic" style="background:var(--blue);border-color:var(--blue)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+            <div><div class="tl-name" style="color:var(--blue3)">View all 6 tools →</div><div class="tl-desc">Free, browser-based</div></div>
+          </a>
+        </div>
+
+        <!-- CTA -->
+        <div class="blog-cta-box">
+          <h3>Want us to handle your site's SEO?</h3>
+          <p>Every Sitezy site is built with meta tags, schema markup, and SEO foundations baked in — from day one.</p>
+          <a href="/contact.html" class="btn btn-blue" style="width:100%;justify-content:center">Get My Free Preview →</a>
+          <p style="font-size:12px;color:var(--text3);margin-top:12px;margin-bottom:0">✓ Preview in 48hrs &nbsp;·&nbsp; ✓ No credit card</p>
+        </div>
+
+      </div><!-- /sidebar -->
+    </div><!-- /blog-layout -->
+
+  </div><!-- /blog-inner -->
+</div><!-- /blog-body -->
+
+<div id="site-footer"></div>
+<script>
+function filterPosts(cat, btn) {
+  // Update active button
+  document.querySelectorAll('.bf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Filter featured post
+  const featured = document.querySelector('.featured-post');
+  if (cat === 'all' || featured.dataset.cat === cat) {
+    featured.style.display = '';
+  } else {
+    featured.style.display = 'none';
+  }
+
+  // Filter grid posts
+  const cards = document.querySelectorAll('#posts-grid .post-card');
+  let visible = 0;
+  cards.forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+      visible++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // Count featured too
+  if (featured.style.display !== 'none') visible++;
+
+  document.getElementById('no-posts').style.display = visible === 0 ? 'block' : 'none';
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+<script src="/js/includes.js" defer></script>
+</body>
+</html>
