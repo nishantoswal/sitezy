@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ══ CORE PAGES ══ -->
+  <url><loc>https://sitezy.co/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://sitezy.co/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sitezy.co/pricing</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sitezy.co/how-it-works</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/reviews</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- ══ SOLUTIONS ══ -->
+  <url><loc>https://sitezy.co/solutions</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/local-businesses</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/restaurants-retail</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/professional-services</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/ecommerce</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/startups-saas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/creators-freelancers</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/real-estate</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/dental-medical</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/beauty-salons</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sitezy.co/solutions/logistics-transport</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ══ BLOG ══ -->
+  <url><loc>https://sitezy.co/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sitezy.co/blog/how-much-does-a-website-cost-for-small-business</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sitezy.co/blog/do-i-need-a-website-if-i-have-facebook</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sitezy.co/blog/how-long-does-it-take-to-build-a-business-website</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sitezy.co/blog/why-your-business-website-isnt-ranking-on-google</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sitezy.co/blog/website-vs-social-media-which-does-your-business-need</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- ══ FREE SEO TOOLS ══ -->
+  <url><loc>https://sitezy.co/tools</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://sitezy.co/tools/meta-tag-checker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sitezy.co/tools/sitemap-checker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sitezy.co/tools/robots-checker</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sitezy.co/tools/schema-validator</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sitezy.co/tools/og-preview</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sitezy.co/tools/keyword-density</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- ══ LEGAL ══ -->
+  <url><loc>https://sitezy.co/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://sitezy.co/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+
+</urlset>

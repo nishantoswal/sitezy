@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block component files from being indexed (they're not pages)
+Disallow: /components/
+Disallow: /js/includes.js
+
+Sitemap: https://sitezy.co/sitemap.xml
