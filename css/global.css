@@ -136,16 +136,25 @@ section{padding:96px 20px}
 .drop-chevron{transition:transform .2s;flex-shrink:0}
 .has-drop:hover .drop-chevron,.has-drop:focus-within .drop-chevron{transform:rotate(180deg)}
 .nav-dropdown{
-  position:absolute;top:calc(100% + 8px);left:50%;
-  transform:translateX(-50%) translateY(-8px);
-  width:520px;background:var(--navy2);
+  position:absolute;top:100%;left:0;
+  transform:translateY(-6px);
+  min-width:520px;background:var(--navy2);
   border:1px solid var(--border);border-radius:var(--r-lg);
-  padding:20px;opacity:0;visibility:hidden;
-  transition:all .2s cubic-bezier(.4,0,.2,1);
+  padding:8px 20px 20px;opacity:0;visibility:hidden;
+  transition:opacity .2s cubic-bezier(.4,0,.2,1),transform .2s cubic-bezier(.4,0,.2,1),visibility .2s;
   box-shadow:var(--sh-lg);pointer-events:none;
+  z-index:300;
+}
+/* Invisible bridge fills the gap between trigger and dropdown so hover isn't lost */
+.nav-dropdown::before{
+  content:'';position:absolute;top:-12px;left:0;right:0;height:12px;
 }
 .has-drop:hover .nav-dropdown,.has-drop:focus-within .nav-dropdown{
-  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto;
+  opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;
+}
+/* SEO Tools dropdown — anchor to right edge so it doesn't clip viewport */
+.has-drop.drop-right .nav-dropdown{
+  left:auto;right:0;
 }
 .nav-drop-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .nav-drop-item{display:flex;align-items:flex-start;gap:12px;padding:12px;border-radius:var(--r-md);transition:background .2s}
@@ -206,15 +215,16 @@ footer{background:var(--navy2)}
   border-bottom:1px solid var(--border);
 }
 @media(min-width:540px){.foot-top{grid-template-columns:1fr 1fr 1fr}}
-@media(min-width:900px){.foot-top{grid-template-columns:2fr 1fr 1fr 1fr;padding:64px 56px;gap:48px}}
+@media(min-width:900px){.foot-top{grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;padding:64px 56px;gap:36px}}
 .foot-brand-col{grid-column:1/-1}
 @media(min-width:900px){.foot-brand-col{grid-column:auto}}
 .foot-logo{
   font-family:'Plus Jakarta Sans',sans-serif;
   font-size:22px;font-weight:800;color:var(--white);
-  margin-bottom:12px;white-space:nowrap;
+  white-space:nowrap;
 }
 .foot-logo em{color:var(--blue3);font-style:normal}
+.foot-logo-link{display:inline-flex;align-items:center;gap:9px;text-decoration:none;margin-bottom:12px}
 .foot-tag{font-size:15px;color:var(--text3);line-height:1.7;max-width:280px;font-style:italic}
 .foot-badges{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
 .foot-badge{
