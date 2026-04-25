@@ -185,6 +185,34 @@
 .sc-ind .sol-card-result{ color:var(--ind); }
 .sc-ind:hover{ border-color:rgba(251,146,60,.3); }
 
+/* Real Estate — amber/gold #D97706 */
+.sc-re2 .sol-card-band{ background:#D97706; }
+.sc-re2 .sol-card-icon{ background:rgba(217,119,6,.12); border:1px solid rgba(217,119,6,.2); }
+.sc-re2 .sol-card-icon svg{ stroke:#D97706; }
+.sc-re2 .sol-card-result{ color:#D97706; }
+.sc-re2:hover{ border-color:rgba(217,119,6,.3); }
+
+/* Dental & Medical — teal #0D9488 */
+.sc-teal .sol-card-band{ background:#0D9488; }
+.sc-teal .sol-card-icon{ background:rgba(13,148,136,.12); border:1px solid rgba(13,148,136,.2); }
+.sc-teal .sol-card-icon svg{ stroke:#0D9488; }
+.sc-teal .sol-card-result{ color:#0D9488; }
+.sc-teal:hover{ border-color:rgba(13,148,136,.3); }
+
+/* Beauty & Salons — rose #EC4899 */
+.sc-rose .sol-card-band{ background:#EC4899; }
+.sc-rose .sol-card-icon{ background:rgba(236,72,153,.12); border:1px solid rgba(236,72,153,.2); }
+.sc-rose .sol-card-icon svg{ stroke:#EC4899; }
+.sc-rose .sol-card-result{ color:#EC4899; }
+.sc-rose:hover{ border-color:rgba(236,72,153,.3); }
+
+/* Logistics & Transport — indigo #6366F1 */
+.sc-violet .sol-card-band{ background:#6366F1; }
+.sc-violet .sol-card-icon{ background:rgba(99,102,241,.12); border:1px solid rgba(99,102,241,.2); }
+.sc-violet .sol-card-icon svg{ stroke:#6366F1; }
+.sc-violet .sol-card-result{ color:#6366F1; }
+.sc-violet:hover{ border-color:rgba(99,102,241,.3); }
+
 /* ── WHY INDUSTRY-SPECIFIC MATTERS ── */
 .why-section{ background:var(--navy); padding:80px 20px; }
 @media(min-width:768px){ .why-section{ padding:96px 56px; } }
@@ -360,7 +388,7 @@
     <span class="breadcrumb-sep">›</span>
     <span>Solutions</span>
   </div>
-  <div class="sec-label center" style="justify-content:center;margin-top:18px">Built for Your Industry</div>
+  <div class="sec-label center" style="margin-top:18px">Built for Your Industry</div>
   <h1>Websites that work as hard<br>as <span class="accent">your business does</span></h1>
   <p class="sol-hero-sub">Every industry has different customers, different buying signals, and different reasons people hire or don't hire you. We build for all of it — not a generic template, a site that fits your world.</p>
   <div class="sol-hero-ctas">
@@ -370,12 +398,16 @@
   <p class="sol-hero-note">✓ Free preview &nbsp;·&nbsp; ✓ No credit card &nbsp;·&nbsp; ✓ Live in 7 days</p>
   <!-- Quick jump pills -->
   <div class="ind-pills">
-    <a href="/solutions/local-businesses.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--hs)"></span>Local Services</a>
-    <a href="/solutions/restaurants-retail.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--re)"></span>Restaurants</a>
-    <a href="/solutions/professional-services.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--blue3)"></span>Professional Services</a>
-    <a href="/solutions/ecommerce.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--ec)"></span>E-Commerce</a>
-    <a href="/solutions/startups-saas.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--lt)"></span>Startups &amp; SaaS</a>
-    <a href="/solutions/creators-freelancers.html" class="ind-pill"><span class="ind-pill-dot" style="background:var(--ind)"></span>Creators</a>
+    <a href="/solutions/local-businesses" class="ind-pill"><span class="ind-pill-dot" style="background:var(--hs)"></span>Local Services</a>
+    <a href="/solutions/restaurants-retail" class="ind-pill"><span class="ind-pill-dot" style="background:var(--re)"></span>Restaurants</a>
+    <a href="/solutions/professional-services" class="ind-pill"><span class="ind-pill-dot" style="background:var(--blue3)"></span>Professional Services</a>
+    <a href="/solutions/ecommerce" class="ind-pill"><span class="ind-pill-dot" style="background:var(--ec)"></span>E-Commerce</a>
+    <a href="/solutions/startups-saas" class="ind-pill"><span class="ind-pill-dot" style="background:var(--lt)"></span>Startups &amp; SaaS</a>
+    <a href="/solutions/creators-freelancers" class="ind-pill"><span class="ind-pill-dot" style="background:var(--ind)"></span>Creators</a>
+    <a href="/solutions/real-estate" class="ind-pill"><span class="ind-pill-dot" style="background:#D97706"></span>Real Estate</a>
+    <a href="/solutions/dental-medical" class="ind-pill"><span class="ind-pill-dot" style="background:#0D9488"></span>Dental &amp; Medical</a>
+    <a href="/solutions/beauty-salons" class="ind-pill"><span class="ind-pill-dot" style="background:#EC4899"></span>Beauty &amp; Salons</a>
+    <a href="/solutions/logistics-transport" class="ind-pill"><span class="ind-pill-dot" style="background:#6366F1"></span>Logistics &amp; Transport</a>
   </div>
 </div>
 
@@ -392,14 +424,14 @@
 <!-- ══ SOLUTION CARDS ══ -->
 <section class="solutions-section">
   <div class="container">
-    <div class="sec-label center" style="justify-content:center">Choose Your Industry</div>
+    <div class="sec-label center">Choose Your Industry</div>
     <h2 class="sec-title center">Find your solution.<br><span class="accent">Pick your industry below.</span></h2>
     <p class="sec-sub center">Every solution page tells you exactly what we build, why it works for your type of business, and what our clients in that space have said.</p>
 
     <div class="sol-grid reveal">
 
       <!-- Local Service Businesses -->
-      <a href="/solutions/local-businesses.html" class="sol-card sc-hs">
+      <a href="/solutions/local-businesses" class="sol-card sc-hs">
         <div class="sol-card-band"></div>
         <div class="sol-card-body">
           <div class="sol-card-icon">
@@ -421,7 +453,7 @@
       </a>
 
       <!-- Restaurants & Food -->
-      <a href="/solutions/restaurants-retail.html" class="sol-card sc-re">
+      <a href="/solutions/restaurants-retail" class="sol-card sc-re">
         <div class="sol-card-band"></div>
         <div class="sol-card-body">
           <div class="sol-card-icon">
@@ -445,7 +477,7 @@
       </a>
 
       <!-- Professional Services -->
-      <a href="/solutions/professional-services.html" class="sol-card sc-blue">
+      <a href="/solutions/professional-services" class="sol-card sc-blue">
         <div class="sol-card-band"></div>
         <div class="sol-card-body">
           <div class="sol-card-icon">
@@ -468,7 +500,7 @@
       </a>
 
       <!-- E-Commerce -->
-      <a href="/solutions/ecommerce.html" class="sol-card sc-ec">
+      <a href="/solutions/ecommerce" class="sol-card sc-ec">
         <div class="sol-card-band"></div>
         <div class="sol-card-body">
           <div class="sol-card-icon">
@@ -492,7 +524,7 @@
       </a>
 
       <!-- Startups & SaaS -->
-      <a href="/solutions/startups-saas.html" class="sol-card sc-lt">
+      <a href="/solutions/startups-saas" class="sol-card sc-lt">
         <div class="sol-card-band"></div>
         <div class="sol-card-body">
           <div class="sol-card-icon">
@@ -514,13 +546,12 @@
       </a>
 
       <!-- Creators & Freelancers -->
-      <a href="/solutions/creators-freelancers.html" class="sol-card sc-ind">
+      <a href="/solutions/creators-freelancers" class="sol-card sc-ind">
         <div class="sol-card-band"></div>
         <div class="sol-card-body">
           <div class="sol-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M20 21a8 8 0 1 0-16 0"/>
+              <circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/>
             </svg>
           </div>
           <div class="sol-card-title">Creators &amp; Freelancers</div>
@@ -536,6 +567,94 @@
         </div>
       </a>
 
+      <!-- Real Estate -->
+      <a href="/solutions/real-estate" class="sol-card sc-re2">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">Real Estate</div>
+          <p class="sol-card-desc">Premium property websites that position your agency as the local authority — with area landing pages, agent profiles, vendor valuation forms, and sold results that build instant credibility.</p>
+          <div class="sol-card-types">Agents · Brokers · Property Agencies · Developers · Property Managers</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:#D97706">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More buyer &amp; seller enquiries
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Dental & Medical -->
+      <a href="/solutions/dental-medical" class="sol-card sc-teal">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">Dental &amp; Medical</div>
+          <p class="sol-card-desc">Patient-trust-first websites for healthcare providers. Online booking integration, practitioner profiles, service pages optimised for local search, and a calm professional design that converts.</p>
+          <div class="sol-card-types">Dentists · GPs · Specialists · Physios · Clinics · Allied Health</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:#0D9488">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More new patient bookings
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Beauty & Salons -->
+      <a href="/solutions/beauty-salons" class="sol-card sc-rose">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">Beauty &amp; Salons</div>
+          <p class="sol-card-desc">Visually stunning websites for salons, spas, and beauty professionals. Portfolio gallery, booking system integration, services menu, and Google discovery built in — so your chair stays full.</p>
+          <div class="sol-card-types">Hair Salons · Spas · Nail Studios · Barbers · Brow Bars · Med Spas</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:#EC4899">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More booked appointments
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Logistics & Transport -->
+      <a href="/solutions/logistics-transport" class="sol-card sc-violet">
+        <div class="sol-card-band"></div>
+        <div class="sol-card-body">
+          <div class="sol-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+            </svg>
+          </div>
+          <div class="sol-card-title">Logistics &amp; Transport</div>
+          <p class="sol-card-desc">B2B-credibility-first websites for freight, charter, and fleet operators. Fleet showcase, route coverage, certifications, and quote request forms that win contracts before the first call.</p>
+          <div class="sol-card-types">Freight · Couriers · Shuttle Services · Charter Operators · Fleet Companies</div>
+          <div class="sol-card-footer">
+            <div class="sol-card-result" style="color:#6366F1">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 5 5 12"/></svg>
+              More B2B contract enquiries
+            </div>
+            <span class="sol-card-link">View solution <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -543,7 +662,7 @@
 <!-- ══ WHY INDUSTRY-SPECIFIC ══ -->
 <section class="why-section">
   <div class="container">
-    <div class="sec-label center" style="justify-content:center">Why Industry Expertise Matters</div>
+    <div class="sec-label center">Why Industry Expertise Matters</div>
     <h2 class="sec-title center">Generic websites<br><span class="accent">don't win customers</span></h2>
     <p class="sec-sub center">A plumber's website and a lawyer's website have almost nothing in common. The way customers search, evaluate, and decide is completely different — so the site has to be different too.</p>
     <div class="why-grid reveal">
