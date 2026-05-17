@@ -118,29 +118,68 @@
 
 <!-- Mobile Drawer -->
 <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+
+  <!-- Core links -->
   <a class="drawer-link" href="/how-it-works">How It Works</a>
   <a class="drawer-link" href="/pricing">Pricing</a>
   <a class="drawer-link" href="/reviews">Client Results</a>
   <a class="drawer-link" href="/about">About</a>
   <a class="drawer-link" href="/contact">Contact</a>
-  <div class="drawer-section">Solutions</div>
-  <a class="drawer-link" href="/solutions/local-businesses">Local Service Businesses</a>
-  <a class="drawer-link" href="/solutions/restaurants-retail">Restaurants &amp; Food</a>
-  <a class="drawer-link" href="/solutions/professional-services">Professional Services</a>
-  <a class="drawer-link" href="/solutions/ecommerce">E-Commerce &amp; Retail</a>
-  <a class="drawer-link" href="/solutions/startups-saas">Startups &amp; SaaS</a>
-  <a class="drawer-link" href="/solutions/creators-freelancers">Creators &amp; Freelancers</a>
-  <a class="drawer-link" href="/solutions/real-estate">Real Estate</a>
-  <a class="drawer-link" href="/solutions/dental-medical">Dental &amp; Medical</a>
-  <a class="drawer-link" href="/solutions/beauty-salons">Beauty &amp; Salons</a>
-  <a class="drawer-link" href="/solutions/logistics-transport">Logistics &amp; Transport</a>
-  <div class="drawer-section">Free SEO Tools</div>
-  <a class="drawer-link" href="/tools/meta-tag-checker">Meta Tag Checker</a>
-  <a class="drawer-link" href="/tools/sitemap-checker">Sitemap XML Checker</a>
-  <a class="drawer-link" href="/tools/robots-checker">Robots.txt Tester</a>
-  <a class="drawer-link" href="/tools/schema-validator">Schema Validator</a>
-  <a class="drawer-link" href="/tools/og-preview">Social Media Preview</a>
-  <a class="drawer-link" href="/tools/keyword-density">Keyword Density Checker</a>
   <a class="drawer-link" href="/blog">Blog</a>
+
+  <!-- Solutions accordion -->
+  <button class="drawer-acc-trigger" onclick="toggleAcc(this)" aria-expanded="false">
+    <span>Solutions</span>
+    <svg class="drawer-acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="drawer-acc-body">
+    <a class="drawer-sub-link" href="/solutions/local-businesses">
+      <span class="drawer-sub-dot" style="background:#06B6D4"></span>Local Service Businesses
+    </a>
+    <a class="drawer-sub-link" href="/solutions/restaurants-retail">
+      <span class="drawer-sub-dot" style="background:#F59E0B"></span>Restaurants &amp; Food
+    </a>
+    <a class="drawer-sub-link" href="/solutions/professional-services">
+      <span class="drawer-sub-dot" style="background:#4F71FF"></span>Professional Services
+    </a>
+    <a class="drawer-sub-link" href="/solutions/ecommerce">
+      <span class="drawer-sub-dot" style="background:#F472B6"></span>E-Commerce &amp; Retail
+    </a>
+    <a class="drawer-sub-link" href="/solutions/startups-saas">
+      <span class="drawer-sub-dot" style="background:#A78BFA"></span>Startups &amp; SaaS
+    </a>
+    <a class="drawer-sub-link" href="/solutions/creators-freelancers">
+      <span class="drawer-sub-dot" style="background:#FB923C"></span>Creators &amp; Freelancers
+    </a>
+    <a class="drawer-sub-link" href="/solutions/real-estate">
+      <span class="drawer-sub-dot" style="background:#D97706"></span>Real Estate
+    </a>
+    <a class="drawer-sub-link" href="/solutions/dental-medical">
+      <span class="drawer-sub-dot" style="background:#0D9488"></span>Dental &amp; Medical
+    </a>
+    <a class="drawer-sub-link" href="/solutions/beauty-salons">
+      <span class="drawer-sub-dot" style="background:#EC4899"></span>Beauty &amp; Salons
+    </a>
+    <a class="drawer-sub-link" href="/solutions/logistics-transport">
+      <span class="drawer-sub-dot" style="background:#6366F1"></span>Logistics &amp; Transport
+    </a>
+    <a class="drawer-sub-link drawer-sub-all" href="/solutions">View all solutions →</a>
+  </div>
+
+  <!-- SEO Tools accordion -->
+  <button class="drawer-acc-trigger" onclick="toggleAcc(this)" aria-expanded="false">
+    <span>Free SEO Tools</span>
+    <svg class="drawer-acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="drawer-acc-body">
+    <a class="drawer-sub-link" href="/tools/meta-tag-checker">Meta Tag Checker</a>
+    <a class="drawer-sub-link" href="/tools/sitemap-checker">Sitemap XML Checker</a>
+    <a class="drawer-sub-link" href="/tools/robots-checker">Robots.txt Tester</a>
+    <a class="drawer-sub-link" href="/tools/schema-validator">Schema Validator</a>
+    <a class="drawer-sub-link" href="/tools/og-preview">Social Media Preview</a>
+    <a class="drawer-sub-link" href="/tools/keyword-density">Keyword Density</a>
+    <a class="drawer-sub-link drawer-sub-all" href="/tools">All free tools →</a>
+  </div>
+
   <a class="drawer-cta" href="/contact">Get My Free Preview →</a>
 </div>
