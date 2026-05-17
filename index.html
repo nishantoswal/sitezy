@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sitezy — Professional Websites for a Flat Monthly Fee | From $39/mo</title>
 <meta name="description" content="Sitezy designs, builds and manages your professional website for one flat monthly fee. $0 setup. 48-hour live preview. Custom design, unlimited edits, SSL hosting included. Cancel anytime.">
@@ -15,11 +17,20 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F71FF'/%3E%3Cpath d='M19.5 4.5L11 15.5h6.5L14.5 27.5l10-13H18l1.5-10z' fill='white' opacity='.95'/%3E%3C/svg%3E">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"></noscript>
 <!-- Shared styles -->
 <link rel="stylesheet" href="/css/global.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5VQ8FXEPSE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-5VQ8FXEPSE");
+  </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://sitezy.co/#org","name":"Sitezy","url":"https://sitezy.co","email":"hello@sitezy.co","description":"Professional Website-as-a-Service for global businesses."},{"@type":"WebSite","@id":"https://sitezy.co/#website","url":"https://sitezy.co","name":"Sitezy"},{"@type":"Service","name":"Website-as-a-Service Subscription","provider":{"@id":"https://sitezy.co/#org"},"areaServed":"Worldwide","hasOfferCatalog":{"@type":"OfferCatalog","name":"Sitezy Plans","itemListElement":[{"@type":"Offer","name":"Starter","price":"39","priceCurrency":"USD"},{"@type":"Offer","name":"Growth","price":"69","priceCurrency":"USD"},{"@type":"Offer","name":"Scale","price":"99","priceCurrency":"USD"}]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the free preview work?","acceptedAnswer":{"@type":"Answer","text":"Fill our 2-minute brief. Preview ready in 48 hours. You only subscribe if you love it."}},{"@type":"Question","name":"Is there a setup fee?","acceptedAnswer":{"@type":"Answer","text":"No. Sitezy charges $0 setup. You pay only after approving your preview."}}]}]}
 </script>
@@ -425,7 +436,152 @@
 <body>
 
 <!-- ══ HEADER (injected by includes.js) ══ -->
-<div id="site-header"></div>
+<div id="site-header"><nav id="main-nav">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 28 28" fill="none" width="28" height="28" style="flex-shrink:0;border-radius:7px">
+      <rect width="28" height="28" rx="7" fill="#4F71FF"/>
+      <path d="M17 4.5L9.5 14H15.5L12.5 23.5L21 14H15L17 4.5Z" fill="white" opacity=".95"/>
+    </svg>
+    <span>Site<em>zy</em></span>
+  </a>
+
+  <ul class="nav-links">
+    <li class="has-drop">
+      <button class="drop-trigger" aria-haspopup="true">
+        Solutions
+        <svg class="drop-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-dropdown" style="min-width:680px">
+        <div class="nav-drop-grid" style="grid-template-columns:repeat(3,1fr)">
+          <a href="/solutions/local-businesses" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+            <span><strong>Local Service Businesses</strong><small>Plumbers, HVAC, Electricians, Roofers</small></span>
+          </a>
+          <a href="/solutions/restaurants-retail" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span>
+            <span><strong>Restaurants &amp; Food</strong><small>Cafés, Bars, Takeaways, Catering</small></span>
+          </a>
+          <a href="/solutions/professional-services" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+            <span><strong>Professional Services</strong><small>Lawyers, Accountants, Consultants</small></span>
+          </a>
+          <a href="/solutions/ecommerce" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+            <span><strong>E-Commerce &amp; Retail</strong><small>DTC Brands, Online Stores, Boutiques</small></span>
+          </a>
+          <a href="/solutions/startups-saas" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+            <span><strong>Startups &amp; SaaS</strong><small>Early-stage, App Launches, MVPs</small></span>
+          </a>
+          <a href="/solutions/creators-freelancers" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></span>
+            <span><strong>Creators &amp; Freelancers</strong><small>Photographers, Designers, Coaches</small></span>
+          </a>
+          <a href="/solutions/real-estate" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+            <span><strong>Real Estate</strong><small>Agents, Agencies, Property Managers</small></span>
+          </a>
+          <a href="/solutions/dental-medical" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+            <span><strong>Dental &amp; Medical</strong><small>Clinics, Practices, Allied Health</small></span>
+          </a>
+          <a href="/solutions/beauty-salons" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
+            <span><strong>Beauty &amp; Salons</strong><small>Hair, Nails, Spas, Barbers</small></span>
+          </a>
+          <a href="/solutions/logistics-transport" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+            <span><strong>Logistics &amp; Transport</strong><small>Freight, Charter, Fleet Operators</small></span>
+          </a>
+        </div>
+        <div class="drop-footer">
+          <a href="/solutions/">View all 10 solutions →</a>
+          <a href="/contact">Get a free preview</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="/how-it-works">How It Works</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li class="has-drop drop-right">
+      <button class="drop-trigger" aria-haspopup="true">
+        Free SEO Tools
+        <svg class="drop-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-dropdown" style="min-width:500px">
+        <div class="nav-drop-grid" style="grid-template-columns:1fr 1fr">
+          <a href="/tools/meta-tag-checker" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></span>
+            <span><strong>Meta Tag Checker</strong><small>Preview your Google SERP snippet</small></span>
+          </a>
+          <a href="/tools/sitemap-checker" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            <span><strong>Sitemap XML Checker</strong><small>Validate your XML sitemap file</small></span>
+          </a>
+          <a href="/tools/robots-checker" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            <span><strong>Robots.txt Tester</strong><small>Test which pages bots can crawl</small></span>
+          </a>
+          <a href="/tools/schema-validator" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+            <span><strong>Schema Validator</strong><small>Check JSON-LD structured data</small></span>
+          </a>
+          <a href="/tools/og-preview" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+            <span><strong>Social Media Preview</strong><small>See your OG / Twitter share card</small></span>
+          </a>
+          <a href="/tools/keyword-density" class="nav-drop-item">
+            <span class="nav-drop-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+            <span><strong>Keyword Density Checker</strong><small>Analyse keyword frequency in copy</small></span>
+          </a>
+        </div>
+        <div class="drop-footer">
+          <a href="/tools/">All free SEO tools →</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="/blog">Blog</a></li>
+  </ul>
+
+  <div class="nav-right-desktop">
+    <a href="/about" class="nav-login">About</a>
+    <a href="/contact" class="btn btn-blue btn-sm">Get Free Preview →</a>
+  </div>
+
+  <button class="nav-ham" id="nav-ham" aria-label="Open menu" aria-expanded="false">
+    <span class="ham-bar"></span>
+    <span class="ham-bar"></span>
+    <span class="ham-bar"></span>
+  </button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <a class="drawer-link" href="/how-it-works">How It Works</a>
+  <a class="drawer-link" href="/pricing">Pricing</a>
+  <a class="drawer-link" href="/reviews">Client Results</a>
+  <a class="drawer-link" href="/about">About</a>
+  <a class="drawer-link" href="/contact">Contact</a>
+  <div class="drawer-section">Solutions</div>
+  <a class="drawer-link" href="/solutions/local-businesses">Local Service Businesses</a>
+  <a class="drawer-link" href="/solutions/restaurants-retail">Restaurants &amp; Food</a>
+  <a class="drawer-link" href="/solutions/professional-services">Professional Services</a>
+  <a class="drawer-link" href="/solutions/ecommerce">E-Commerce &amp; Retail</a>
+  <a class="drawer-link" href="/solutions/startups-saas">Startups &amp; SaaS</a>
+  <a class="drawer-link" href="/solutions/creators-freelancers">Creators &amp; Freelancers</a>
+  <a class="drawer-link" href="/solutions/real-estate">Real Estate</a>
+  <a class="drawer-link" href="/solutions/dental-medical">Dental &amp; Medical</a>
+  <a class="drawer-link" href="/solutions/beauty-salons">Beauty &amp; Salons</a>
+  <a class="drawer-link" href="/solutions/logistics-transport">Logistics &amp; Transport</a>
+  <div class="drawer-section">Free SEO Tools</div>
+  <a class="drawer-link" href="/tools/meta-tag-checker">Meta Tag Checker</a>
+  <a class="drawer-link" href="/tools/sitemap-checker">Sitemap XML Checker</a>
+  <a class="drawer-link" href="/tools/robots-checker">Robots.txt Tester</a>
+  <a class="drawer-link" href="/tools/schema-validator">Schema Validator</a>
+  <a class="drawer-link" href="/tools/og-preview">Social Media Preview</a>
+  <a class="drawer-link" href="/tools/keyword-density">Keyword Density Checker</a>
+  <a class="drawer-link" href="/blog">Blog</a>
+  <a class="drawer-cta" href="/contact">Get My Free Preview →</a>
+</div></div>
 
 <!-- ══ HERO ══ -->
 <section class="hero">
@@ -625,7 +781,7 @@
       </div>
       <div>
         <div class="form-success" id="form-success"><h4>🎉 Got it — we'll be in touch!</h4><p>Your preview will be ready within 48 hours. Check your email for a confirmation from hello@sitezy.co</p></div>
-        <form class="cform" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form class="cform" id="contact-form" action="/api/contact" method="POST">
           <input type="hidden" name="_subject" value="New Sitezy Preview Request">
           <div class="cform-row">
             <div class="cform-group"><label class="cform-label" for="f-name">Your Name <span class="cform-req">*</span></label><input class="cform-input" id="f-name" type="text" name="name" placeholder="John Smith" required autocomplete="name"></div>
@@ -652,7 +808,91 @@
 </div>
 
 <!-- ══ FOOTER (injected by includes.js) ══ -->
-<div id="site-footer"></div>
+<div id="site-footer"><footer>
+  <div class="foot-top">
+    <div class="foot-brand-col">
+      <a href="/" class="foot-logo-link">
+        <svg viewBox="0 0 28 28" fill="none" width="26" height="26" style="flex-shrink:0;border-radius:6px">
+          <rect width="28" height="28" rx="7" fill="#4F71FF"/>
+          <path d="M17 4.5L9.5 14H15.5L12.5 23.5L21 14H15L17 4.5Z" fill="white" opacity=".95"/>
+        </svg>
+        <span class="foot-logo">Site<em>zy</em>.co</span>
+      </a>
+      <div class="foot-tag">"The Web, Simplified." — Premium Website-as-a-Service for global businesses of every size.</div>
+      <div class="foot-badges">
+        <div class="foot-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          SSL Secured
+        </div>
+        <div class="foot-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          4.9 Rated
+        </div>
+        <div class="foot-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Global
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="foot-col-title">Product</div>
+      <ul class="foot-links">
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/reviews">Client Results</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="foot-col-title">Solutions</div>
+      <ul class="foot-links">
+        <li><a href="/solutions/local-businesses">Local Services</a></li>
+        <li><a href="/solutions/restaurants-retail">Restaurants</a></li>
+        <li><a href="/solutions/professional-services">Professional Services</a></li>
+        <li><a href="/solutions/ecommerce">E-Commerce</a></li>
+        <li><a href="/solutions/real-estate">Real Estate</a></li>
+        <li><a href="/solutions/dental-medical">Dental &amp; Medical</a></li>
+        <li><a href="/solutions/beauty-salons">Beauty &amp; Salons</a></li>
+        <li><a href="/solutions/logistics-transport">Logistics</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="foot-col-title">Free SEO Tools</div>
+      <ul class="foot-links">
+        <li><a href="/tools/meta-tag-checker">Meta Tag Checker</a></li>
+        <li><a href="/tools/sitemap-checker">Sitemap XML Checker</a></li>
+        <li><a href="/tools/robots-checker">Robots.txt Tester</a></li>
+        <li><a href="/tools/schema-validator">Schema Validator</a></li>
+        <li><a href="/tools/og-preview">Social Media Preview</a></li>
+        <li><a href="/tools/keyword-density">Keyword Density</a></li>
+        <li><a href="/tools/">All Tools →</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="foot-col-title">Company</div>
+      <ul class="foot-links">
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="mailto:hello@sitezy.co">hello@sitezy.co</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot-bottom">
+    <div class="foot-copy">© 2026 Sitezy.co · All rights reserved · "The Web, Simplified."</div>
+    <div class="foot-socials">
+      <a href="https://twitter.com/sitezyco" rel="noopener noreferrer">Twitter/X</a>
+      <a href="https://linkedin.com/company/sitezy" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://instagram.com/sitezyco" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </div>
+</footer></div>
 
 <!-- ══ PAGE SCRIPTS ══ -->
 <script>
@@ -669,10 +909,10 @@ document.querySelectorAll('.pf-btn').forEach(btn=>{btn.addEventListener('click',
 
 /* Contact form */
 const form=document.getElementById('contact-form');
-if(form){form.addEventListener('submit',async(e)=>{e.preventDefault();const btn=form.querySelector('.cform-submit');btn.textContent='Sending…';btn.disabled=true;try{const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(r.ok){form.style.display='none';document.getElementById('form-success').classList.add('show')}else{btn.textContent='Send & Get My Free Preview';btn.disabled=false}}catch{btn.textContent='Send & Get My Free Preview';btn.disabled=false}})}
+if(form){form.addEventListener('submit',async function(e){e.preventDefault();const btn=form.querySelector('button[type="submit"]');const orig=btn.textContent;btn.textContent='Sending…';btn.disabled=true;try{const data=Object.fromEntries(new FormData(form));const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(r.ok){form.style.display='none';const s=document.getElementById('form-success');if(s)s.classList.add('show');}else{btn.textContent=orig;btn.disabled=false;alert('Something went wrong. Please email us directly at hello@sitezy.co');}}catch(err){btn.textContent=orig;btn.disabled=false;alert('Something went wrong. Please email us directly at hello@sitezy.co');}});}
 </script>
 
 <!-- ══ SHARED INCLUDES (loads nav + footer) ══ -->
-<script src="/js/includes.js" defer></script>
+<script src="/js/includes.js"></script>
 </body>
 </html>
